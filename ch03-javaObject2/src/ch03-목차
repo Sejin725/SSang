@@ -1,0 +1,38 @@
+ch03 목차
+
+! 대소문자 비교 방법
+(ch>='A') && (ch<='Z') ? "대문자임" : "소문자임";
+
+
+kr.s01.exception - 예외처리
+	예외가 발생해도 정상 종료될 수 있도록 프로그램적으로 처리하는 것을 말함
+	예외가 발생하면 catch블럭으로 이동해서 예외가 발생한 이유를 설명하거나 대체코드를 작성
+	ExceptionMain06 에 메서드에서 예외를 임시 보관, 처리하는 과정을 명시함.
+	finally -> DB연동할때 주로 사용
+	
+	
+	
+kr.s02.list - 리스트에 대한 공부 : ArrayList
+	ArrayList list = new ArrayList() -> 들어오는 모든 요소들을 Object로 자동으로 변환해서 집어넣음
+	제네릭 표현 : 객체를 생성할 때 객체에 저장 할 수 있는 요소의 타입을 지정 (예시 : ArrayList<String> list = new ArrayList<String>() )
+	Collections 클래스에 내장된 메서드를 활용하여 정렬을 수행할 수 있다.  (sort, reverse)
+	배열 -> 처음부터 기본값을 계속 사용할 경우에
+	ArrayList -> 값이 계속 변경이 될 경우에(고정데이터로 사용을 잘 안함)
+	Vector -> ArrayList 와 사용이 동일하지만, ArrayList가 성능이 더 좋음 (커넥션 풀에서 활용함)
+	
+	
+	
+kr.s03.stack - 자료구조	
+	Stack -> 후입선출 LIFO(Last-In First-Out) 방식, [push, pop]
+kr.s04.queue
+	LinkedList -> 선입선출 FIFO(First-In First-Out) 방식 [offer, poll]
+kr.s05.set
+	HashSet ->	1.중복이 불가능 
+				2.순서대로 입력되지 않음(index가 존재하지 않음) 
+				3.일정하게 유지되지 않음 
+				4.HashSet은 null 요소도 허용합니다
+				
+	Iterator ->	1. 컬렉션에서 요소를 제어하는 기능
+				2. next() 및 previous()를 써서 앞뒤로 이동하는 기능
+				3. hasNext()를 써서 더 많은 요소가 있는지 확인하는 기능
+	
