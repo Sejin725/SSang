@@ -22,11 +22,11 @@ public class FileMain01 {
 			File f2 = files[i];
 			if (f2.isDirectory()) {
 				//디렉토리인 경우
-				System.out.println("["+f2.getName()+"]");
+				System.out.println("["+f2.getName()+"]");		//디렉토리명
 			}else {
 				//파일인 경우
-				System.out.print(f2.getName());
-				System.out.printf("(%,dbytes)\n",f2.length());
+				System.out.print(f2.getName());					//파일명
+				System.out.printf("(%,dbytes)\n",f2.length());	//파일의 용량
 			}
 		}
 		
