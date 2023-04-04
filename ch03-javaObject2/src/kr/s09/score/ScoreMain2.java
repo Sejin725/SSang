@@ -34,14 +34,7 @@ public class ScoreMain2 {
 			try {
 				int num = Integer.parseInt(br.readLine());
 				if (num == 1) {
-					Score s = new Score();
-					System.out.print("이름 : ");
-					s.setName(br.readLine());
-					s.setKorean(isOutOfRange("국어 : "));
-					s.setEnglish(isOutOfRange("영어 : "));
-					s.setMath(isOutOfRange("수학 : "));
-					
-					list.add(s);
+					inputScore();
 				}else if (num == 2) {
 					printScore();
 				}else if (num == 3) {
@@ -55,9 +48,22 @@ public class ScoreMain2 {
 			}
 		}
 	}
-
+	// 성적입력 메서드
+	private void inputScore()throws IOException {
+		Score s = new Score();
+		System.out.print("이름 : ");
+		s.setName(br.readLine());
+		s.setKorean(isOutOfRange("국어 : "));
+		s.setEnglish(isOutOfRange("영어 : "));
+		s.setMath(isOutOfRange("수학 : "));
+		
+		list.add(s);
+	}
+	// 성적출력 메서드
 	private void printScore() {
+		System.out.println("-------------------------------------------");
 		System.out.println("국어\t영어\t수학\t총점\t평균\t등급");
+		System.out.println("-------------------------------------------");
 		for (Score s : list) {
 			System.out.printf("%d점\t",s.getKorean());
 			System.out.printf("%d점\t",s.getEnglish());
@@ -67,21 +73,20 @@ public class ScoreMain2 {
 			System.out.printf("%s%n",s.makeGrade());
 		}
 	}
-
-	private int isOutOfRange(String m) throws IOException {
+	// 국,영,수 범위 check절
+	private int isOutOfRange(String course) throws IOException {
 		while (true) {
-			System.out.print(m);
+			System.out.print(course); //과목표시
 			try {
 				int input = Integer.parseInt(br.readLine());
+				//성적 유효 범위 (0~100) 체크
 				if (input < 0 || input > 100) {
 					throw new ScoreValueException("0 ~ 100 까지의 수 입력");
 				}
 				return input;
 			} catch (ScoreValueException e) {
 				System.out.println(e.getMessage());
-				continue;
-			}
-			catch (NumberFormatException e) {
+			} catch (NumberFormatException e) {
 				System.out.println("숫자만 입력하세요");
 			}
 		}
