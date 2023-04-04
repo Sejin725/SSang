@@ -8,6 +8,8 @@ import java.util.ArrayList;
 public class ProductMain {
 	ArrayList<Product> list;
 	BufferedReader br;
+	
+	// 생성자
 	public ProductMain() {
 		 list = new ArrayList<Product>();
 		
