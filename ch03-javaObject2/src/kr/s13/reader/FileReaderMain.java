@@ -15,7 +15,6 @@ public class FileReaderMain {
 				System.out.print((char)readChar);
 			}
 			
-			
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
