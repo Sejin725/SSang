@@ -1,8 +1,12 @@
 package kr.s09.score;
 
 import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 
 public class ScoreMain2 {
@@ -14,6 +18,10 @@ public class ScoreMain2 {
 	 */
 	BufferedReader br;
 	ArrayList<Score> list;
+	FileOutputStream fos = null;
+	ObjectOutputStream oos = null;
+	FileInputStream fis = null;
+	ObjectInputStream ois = null;
 	
 	public ScoreMain2() {
 		list = new ArrayList<Score>();
