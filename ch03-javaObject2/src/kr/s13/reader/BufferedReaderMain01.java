@@ -18,16 +18,15 @@ public class BufferedReaderMain01 {
 			System.out.print("당신의 나이 : ");
 						//String -> int변환
 			int age = Integer.parseInt(br.readLine());
-			
-			
-			
+			System.out.println(age);
 			
 		} catch (NumberFormatException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
 			e.printStackTrace();
 		} finally {
-			
+			//자원정리
+			if(br!=null)try {br.close();}catch(IOException e) {}
 		}
 	}	// end of main
 }
