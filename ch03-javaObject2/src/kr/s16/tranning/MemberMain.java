@@ -98,6 +98,7 @@ public class MemberMain {
 			System.out.print(m.getPhone()+"\t");
 			System.out.print(m.getHobby()+"\n");
 		}
+		System.out.println("-------------------------------------------------------");
 	}
 	private void createUser() throws IOException{							// 회원정보입력
 		Member m = new Member();

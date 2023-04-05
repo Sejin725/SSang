@@ -63,4 +63,8 @@ public class Member implements Serializable{
 	public void setHobby(String hobby) {
 		this.hobby = hobby;
 	}
+	@Override
+	public String toString() {
+		return String.format("%s\t%d\t%s\t%s\t%s\t%s\n", name,age,job,address,phone,hobby);
+	}
 }
