@@ -13,7 +13,7 @@ public class BufferedOutputStreamMain {
 			bos = new BufferedOutputStream(fos);
 			String str = "BufferedOutputStream Test입니다.";
 			
-			//생성된 파일에 데이터를 저장
+			//데이터를 buffer에 저장함 (파일에 저장하지 않음)
 					//String -> byte[] 변환
 			bos.write(str.getBytes());
 			
