@@ -55,7 +55,10 @@ kr.s11.input -> 사용자 입력, 파일을 읽어들여오기
 	
 	
 kr.s12.output -> 출력, 내보내기
-	FileOutputStream - 
+	FileOutputStream - write를 기술하여 객체 생성시 명시한 파일명에 텍스트를 추가, 덮어쓰기 할 수 있음
+	
+kr.s13.reader -> 입력 리더기
+	InputStreamReader - System.in(바이트 입력 스트림)을 문자 입력 스트림으로 변환
 	
 	
 	
