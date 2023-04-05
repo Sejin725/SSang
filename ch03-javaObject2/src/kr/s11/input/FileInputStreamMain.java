@@ -22,6 +22,7 @@ public class FileInputStreamMain {
 			*/
 			//영문이외의 문자도 처리 가능
 			readbyte2 = new byte[fis.available()];
+			//파일로부터 읽어들인 데이터를 byte[]에 저장
 			fis.read(readbyte2);
 								//byte[] -> String 변환
 			System.out.println(new String(readbyte2));
