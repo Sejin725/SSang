@@ -59,6 +59,7 @@ kr.s12.output -> 출력, 내보내기
 	
 kr.s13.reader -> 버퍼 읽기
 	InputStreamReader - System.in(바이트 입력 스트림)을 문자 입력 스트림으로 변환
+					  - 주로 BufferedReader를 사용할 경우에 같이 이용됨
 	
 kr.s14.writer -> 버퍼 쓰기 
 	System.getProperty("line.separator") - OS별 호환이 가능한 줄바꿈 입력
@@ -85,3 +86,6 @@ kr.s15.serial -> 객체의 직렬화
 	 			
 kr.s16.tranning
 String.format() -> 문자열의 포맷을 주는 방법 ( Member 클래스 맨 밑에서 재정의함 )
+
+
+kr.s17.network
