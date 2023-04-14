@@ -39,8 +39,14 @@ public class SelectMain {
 			//ResultSet에 보관된 결과집합에 접근해서 행단위로 데이터를 추출
 			while (rs.next()) {
 				//컬럼명을 통해서 데이터를 반환
+				/*
 				System.out.print(rs.getString("id")+"\t");
 				System.out.print(rs.getInt("age")+"\n");
+				*/
+				
+				//컬럼 인덱스를 통해서 데이터를 반환
+				System.out.print(rs.getString(1) + "\t");
+				System.out.println(rs.getInt(2));
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

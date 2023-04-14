@@ -10,7 +10,9 @@ kr.s02.statement - JDBC 사용
 	JDBC를 이용하여 create, insert, select 문 사용
 	
 
-
+kr.s03.preparedstatement
+	JDBC preparedstatement를 이용하여 SQL 구문 수행
+	kr.util 패키지 또한 만들어서 활용함.
 
 
 
