@@ -11,7 +11,7 @@ kr.s02.statement - JDBC 사용
 	
 
 kr.s03.preparedstatement
-	JDBC preparedstatement를 이용하여 SQL 구문 수행
+	JDBC preparedstatement를 이용하여 사용자가 직접 데이터를 입력하는 클래스 생성
 	kr.util 패키지 또한 만들어서 활용함.
 
 

@@ -9,5 +9,5 @@ reg_date date not null
 
 create sequence test2_seq;
 
-
+insert into test2 values();
 
