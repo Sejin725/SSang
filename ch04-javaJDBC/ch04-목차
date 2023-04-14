@@ -2,8 +2,13 @@ ch04-목차
 
 
 kr.s01.basic - JDBC 기본
+	Class.forName 을 통해 JDBC드라이버를 로딩하고, 
+	Connection 객체를 통해 DB에 필요한 정보를 입력하여 DB와 연결을 한다.
 
 
+kr.s02.statement - JDBC 사용
+	JDBC를 이용하여 create, insert, select 문 사용
+	
 
 
 
