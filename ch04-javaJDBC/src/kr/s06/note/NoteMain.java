@@ -48,18 +48,23 @@ public class NoteMain {
 					note.insertInfo(name, passwd, subject, content, email);
 					
 				} else if (no == 2) { // 목록 보기
+					//목록 보기 호출
 					note.selectInfo();
 				} else if (no == 3) { // 상세글 보기
+					//목록 보기 호출
 					note.selectInfo();
 					System.out.print("선택한 글의 번호 : ");
 					int num = Integer.parseInt(br.readLine());
+					
+					//상세글 보기 호출
 					note.selectDetailInfo(num);
 				} else if (no == 4) { // 글수정
 					//목록 보기
 					note.selectInfo();
 					System.out.print("수정할 글의 번호 : ");
 					int num = Integer.parseInt(br.readLine());
-					//글 상세보기
+					
+					//글 상세보기 호출
 					note.selectDetailInfo(num);
 					System.out.print("수정할 이름 : ");
 					String name = br.readLine();
@@ -71,10 +76,16 @@ public class NoteMain {
 					String content = br.readLine();
 					System.out.print("수정할 이메일 : ");
 					String email = br.readLine();
-					//글수정하기
+					
+					//글수정하기 호출
 					note.updateInfo(num, name, passwd, subject, content, email);
 				} else if (no == 5) { // 글삭제
-
+					note.selectInfo();
+					System.out.print("삭제할 글의 번호 : ");
+					int num = Integer.parseInt(br.readLine());
+					
+					//글 삭제하기 호출
+					note.deleteInfo(num);
 				} else if (no == 6) { // 종료
 					System.out.println("프로그램을 종료합니다.");
 					break;

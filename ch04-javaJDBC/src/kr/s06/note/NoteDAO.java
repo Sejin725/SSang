@@ -145,4 +145,26 @@ public class NoteDAO {
 	} // end of updateInfo()---글수정
 	
 	//글삭제
+	public void deleteInfo(int num) {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		String sql = null;
+		
+		try {
+			conn = DBUtil.getConnection();
+			
+			sql = "delete from note where num=?";
+			
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, num);
+			
+			int count = pstmt.executeUpdate();
+			System.out.println(count + "개 행의 데이터를 삭제하였습니다.");
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			DBUtil.executeClose(null, pstmt, conn);
+		}
+	} // end of deleteInfo()---글삭제
 }
