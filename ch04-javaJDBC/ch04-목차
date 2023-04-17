@@ -1,4 +1,7 @@
-ch04-목차
+ch04-목차 [ DB와 이클립스 툴 간의 연결 법 ]
+
+ - 오라클 DB는 연결을 위해 ojdbc라이브러리를 DB와 Java간의 맞는 버전을 찾아서 추가하였다.
+ https://www.oracle.com/kr/database/technologies/appdev/jdbc-downloads.html
 
 
 kr.s01.basic - JDBC 기본
@@ -10,17 +13,19 @@ kr.s02.statement - JDBC 사용
 	JDBC를 이용하여 create, insert, select 문 사용
 	
 
-kr.s03.preparedstatement
+kr.s03.preparedstatement (인자값을 입력받아 매핑하는 방식)
 	JDBC preparedstatement를 이용하여 사용자가 직접 데이터를 입력하는 클래스 생성
-	kr.util 패키지 또한 만들어서 활용함.
+	table.sql 에서 데이터를 저장시킬 테이블, 시퀀스를 생성함
+	kr.util 패키지에서 OJDBC에서 많이 사용하는 코드를 메서드화 해서 재사용성을 높임
+	!!! 주의 !!! - prepared 방식에서 execute 를 진행할때에는 인자값을 넣지 않는다!  (sql을 넣을경우, 초기 sql문으로 덮어씌우기가 됨)
+
+kr.s04
 
 
+kr.s05
 
 
-
-
-
-
+kr.s06
 
 
 
