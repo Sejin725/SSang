@@ -159,8 +159,11 @@ public class NoteDAO {
 			pstmt.setInt(1, num);
 			
 			int count = pstmt.executeUpdate();
-			System.out.println(count + "개 행의 데이터를 삭제하였습니다.");
-			
+			if (count == 0) {
+				System.out.println("삭제할 글이 없습니다.");
+			}else {
+				System.out.println(count + "개 행의 데이터를 삭제하였습니다.");
+			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
