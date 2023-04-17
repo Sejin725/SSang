@@ -30,7 +30,9 @@ public class TransactionMain {
 			pstmt2 = conn.prepareStatement(sql);
 			pstmt2.executeUpdate();
 			
-			sql = "insert into test1 values('Japan',500) ";
+			
+			//테스트용으로 오류가 있는 SQL문 작성
+			sql = "insert into test1 values('China,300) ";
 			
 			pstmt3 = conn.prepareStatement(sql);
 			pstmt3.executeUpdate();
@@ -41,8 +43,16 @@ public class TransactionMain {
 
 		} catch (Exception e) {
 			e.printStackTrace();
+			//예외가 발생될경우에 롤백처리
+			try {
+				conn.rollback();
+			} catch (SQLException e2) {
+				e.printStackTrace();
+			}
 		} finally {
 			//자원정리
+			DBUtil.executeClose(null, pstmt3, null);
+			DBUtil.executeClose(null, pstmt2, null);
 			DBUtil.executeClose(null, pstmt1, conn);
 		}
 	}// end of main
