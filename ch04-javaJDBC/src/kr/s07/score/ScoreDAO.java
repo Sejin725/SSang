@@ -71,6 +71,7 @@ public class ScoreDAO {
 		}
 	}// end of selectInfo()---목록보기
 
+	
 	//성적상세정보
 	public void selectDetailInfo(int num) {
 		Connection conn = null;
@@ -109,10 +110,59 @@ public class ScoreDAO {
 		} finally {
 			DBUtil.executeClose(rs, pstmt, conn);
 		}
-	}	// end of selectDetailInfo()---성적상세정보
-	
+	}// end of selectDetailInfo()---성적상세정보
 	
 	//성적수정
-	//성적삭제
+	public void updateInfo(int num, String name, int korean, int english, int math, int sum, int avg, String grade) {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		String sql = null;
+		
+		try {
+			conn = DBUtil.getConnection();
+			
+			sql = "update score set name=?, korean=?, english=?, math=?, sum=?, avg=? where num=?";
+			
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, name);
+			pstmt.setInt(2, korean);
+			pstmt.setInt(3, english);
+			pstmt.setInt(4, math);
+			pstmt.setInt(5, sum);
+			pstmt.setInt(6, avg);
+			pstmt.setInt(7, num);
+			
+			int count = pstmt.executeUpdate();
+			System.out.println(count + "개 성적 정보를 수정하였습니다.");
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			DBUtil.executeClose(null, pstmt, conn);
+		}
+	}// end of updateInfo()---성적수정
 	
+	//성적삭제
+	public void deleteInfo(int num) {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		String sql = null;
+		
+		try {
+			conn = DBUtil.getConnection();
+			
+			sql = "delete from score where num=?";
+			
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, num);
+			
+			int count = pstmt.executeUpdate();
+			System.out.println(count + "개 성적 정보를 삭제하였습니다.");
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			DBUtil.executeClose(null, pstmt, conn);
+		}
+	}// end of deleteInfo()---성적삭제
 }

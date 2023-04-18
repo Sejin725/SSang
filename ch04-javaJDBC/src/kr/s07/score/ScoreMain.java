@@ -46,14 +46,30 @@ public class ScoreMain {
 					dao.selectInfo();
 				}else if (no == 3) {	//상세정보
 					dao.selectInfo();
-					System.out.print("상세정보 할 번호 : ");
+					System.out.print("성적번호 : ");
 					int num = Integer.parseInt(br.readLine());
 					
 					dao.selectDetailInfo(num);
 				}else if (no == 4) {	//수정
+					dao.selectInfo();
+					System.out.print("수정할 성적번호 : ");
+					int num = Integer.parseInt(br.readLine());
+					System.out.print("이름 : ");
+					String name = br.readLine();
+					int korean = parseInputData("국어 : ");
+					int english = parseInputData("영어 :  ");
+					int math = parseInputData("수학 : ");
+					int sum = makeSum(korean,english,math);
+					int avg = makeAvg(sum);
+					String grade = makeGrade(avg);
 					
+					dao.updateInfo(num, name, korean, english, math, sum, avg, grade);
 				}else if (no == 5) {	//삭제
+					dao.selectInfo();
+					System.out.print("삭제할 성적번호 : ");
+					int num = Integer.parseInt(br.readLine());
 					
+					dao.deleteInfo(num);
 				}else if (no == 6) {	//종료
 					System.out.println("시스템을 종료합니다.");
 					break;
