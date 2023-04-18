@@ -21,8 +21,7 @@ public class NoteMain {
 			e.printStackTrace();
 		} finally {
 			// 자원정리
-			if (br != null)
-				try {br.close();} catch (IOException e) {}
+			if (br != null)try {br.close();} catch (IOException e) {}
 		}
 	}
 

@@ -34,7 +34,9 @@ kr.s06.note
 	DAO(Data Access Object) : 전문적으로 DB 데이터에 접근하는 객체 
 	- DB 데이터 제어용 메서드를 관리하는 클래스를 생성하여 이용함
 
-
+kr.s07.score
+	Main - DAO 패턴에 익숙해지도록 연습
+	사용자 지정 Exception도 만듬
 
 
 
