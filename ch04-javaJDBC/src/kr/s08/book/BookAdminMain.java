@@ -42,7 +42,7 @@ public class BookAdminMain {
 				}else if (no == 3) {	//대출목록
 					dao.loanBookList();
 				}else if (no == 4) {	//회원목록
-					
+					dao.listMember();
 				}else if (no == 5) {	//종료
 					System.out.println("관리자시스템 종료");
 					break;
