@@ -47,7 +47,7 @@ public class BookDAO {
 			System.out.println("=====================================================");
 			System.out.println("도서번호\t제목\t카테고리\t등록날짜");
 			while (rs.next()) {
-				System.out.print(rs.getInt("bk_num")+"\t");
+				System.out.print(rs.getInt("bk_num")+"\t\t");
 				System.out.print(rs.getString("bk_name")+"\t");
 				System.out.print(rs.getString("bk_category")+"\t");
 				System.out.println(rs.getDate("bk_regdate")+"\t");
@@ -60,7 +60,6 @@ public class BookDAO {
 		}
 	}// end of listBook()---도서목록보기
 	//예외(수정,삭제)
-
 	
 	
 	//아이디 중복 체크
@@ -162,7 +161,7 @@ public class BookDAO {
 			System.out.println("=====================================================");
 			System.out.println("회원번호\t아이디\t이름\t전화번호\t생성일");
 			while (rs.next()) {
-				System.out.print(rs.getInt("me_num")+"\t");
+				System.out.print(rs.getInt("me_num")+"\t\t");
 				System.out.print(rs.getString("me_id")+"\t");
 				System.out.print(rs.getString("me_name")+"\t");
 				System.out.print(rs.getString("me_phone")+"\t");
@@ -211,7 +210,7 @@ public class BookDAO {
 		try {
 			conn = DBUtil.getConnection();
 			
-			sql = "insert into reservation values (reservation_seq.nextval, 1, ?, ?, sysdate, null)";
+			sql = "insert into reservation(re_num,re_status,bk_num,me_num) values (reservation_seq.nextval, 1, ?, ?)";
 			
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, bNum);
@@ -247,7 +246,7 @@ public class BookDAO {
 			System.out.println("=====================================================");
 			System.out.println("책번호\t이름\t제목\t대여날짜");
 			while (rs.next()) {
-				System.out.print(rs.getInt("bnum")+"\t");
+				System.out.print(rs.getInt("bnum")+"\t\t");
 				System.out.print(rs.getString("name")+"\t");
 				System.out.print(rs.getString("bname")+"\t");
 				System.out.println(rs.getDate("rdate")+"\t");
@@ -281,7 +280,7 @@ public class BookDAO {
 			System.out.println("=====================================================");
 			System.out.println("책번호\t이름\t제목\t대여날짜");
 			while (rs.next()) {
-				System.out.print(rs.getInt("bnum")+"\t");
+				System.out.print(rs.getInt("bnum")+"\t\t");
 				System.out.print(rs.getString("name")+"\t");
 				System.out.print(rs.getString("bname")+"\t");
 				System.out.println(rs.getDate("rdate")+"\t");
@@ -346,7 +345,5 @@ public class BookDAO {
 			DBUtil.executeClose(null, pstmt, conn);
 		}
 	}// end of returnBook()---반납 처리
-	
-	
 	
 }
