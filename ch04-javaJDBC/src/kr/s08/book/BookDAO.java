@@ -49,7 +49,7 @@ public class BookDAO {
 			while (rs.next()) {
 				System.out.print(rs.getInt("bk_num")+"\t\t");
 				System.out.print(rs.getString("bk_name")+"\t");
-				System.out.print(rs.getString("bk_category")+"\t");
+				System.out.print(rs.getString("bk_category")+"\t\t");
 				System.out.println(rs.getDate("bk_regdate")+"\t");
 			}
 			System.out.println("=====================================================");
@@ -181,24 +181,29 @@ public class BookDAO {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		String sql = null;
-		int status = 0;
+		int status = 1;
+		int bk_num = 0; //해당 책번호가 존재하지 않으면 0
 		
 		try {
 			conn = DBUtil.getConnection();
 			
-			sql = "select re_status from reservation where bk_num=?";
+			sql = "select re_status, bk_num from reservation where bk_num=?";
 			
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, bNum);
 			rs = pstmt.executeQuery();
 			if (rs.next()) {
-				status++;
+				status = rs.getInt("re_status");
+				bk_num = rs.getInt("bk_num");
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
 			DBUtil.executeClose(rs, pstmt, conn);
 		}
+		if (bk_num==0) //책 번호가 존재하지 않을경우
+			status = -1;
+		
 		return status;
 	}
 	//도서 대출 등록
@@ -239,12 +244,13 @@ public class BookDAO {
 			
 			sql = "select b.bk_num bnum, m.me_name name, b.bk_name bname, r.re_regdate rdate "
 					+ "from reservation r join book b on r.bk_num = b.bk_num "
-					+ "join member m on r.me_num = m.me_num";
+					+ "join member m on r.me_num = m.me_num "
+					+ "where r.re_status = 1";
 			
 			pstmt = conn.prepareStatement(sql);
 			rs = pstmt.executeQuery();
 			System.out.println("=====================================================");
-			System.out.println("책번호\t이름\t제목\t대여날짜");
+			System.out.println("책번호\t\t이름\t제목\t대여날짜");
 			while (rs.next()) {
 				System.out.print(rs.getInt("bnum")+"\t\t");
 				System.out.print(rs.getString("name")+"\t");
@@ -271,14 +277,14 @@ public class BookDAO {
 			sql = "select b.bk_num bnum, m.me_name name, b.bk_name bname, r.re_regdate rdate "
 					+ "from reservation r join book b on r.bk_num = b.bk_num "
 					+ "join member m on r.me_num = m.me_num "
-					+ "where m.me_num = ?";
+					+ "where m.me_num = ? and r.re_status = 1";
 			
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, me_num);
 			rs = pstmt.executeQuery();
 			
 			System.out.println("=====================================================");
-			System.out.println("책번호\t이름\t제목\t대여날짜");
+			System.out.println("책번호\t\t이름\t제목\t대여날짜");
 			while (rs.next()) {
 				System.out.print(rs.getInt("bnum")+"\t\t");
 				System.out.print(rs.getString("name")+"\t");
@@ -328,7 +334,7 @@ public class BookDAO {
 		try {
 			conn = DBUtil.getConnection();
 			
-			sql = "delete from reservation where bk_num=? and me_num=? and re_status=1";
+			sql = "update reservation set re_status=0 where bk_num=? and me_num=? and re_status=1";
 			
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, bNum);

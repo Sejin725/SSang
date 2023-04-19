@@ -85,10 +85,12 @@ public class BookUserMain {
 					int bNum = Integer.parseInt(br.readLine());
 					
 					int status = dao.isloanBook(bNum);
-					if (status == 1) 
-						System.out.println("해당 도서는 대여중입니다.");
-					else 
+					if (status == 0) 
 						dao.loanBook(bNum, me_num);
+					else if(status == -1)
+						System.out.println("해당 도서번호는 존재하지않습니다.");
+					else
+						System.out.println("해당 도서는 대여중입니다.");
 				}else if (no == 2) {	//My대출목록
 					dao.MyloanList(me_num);
 				}else if (no == 3) {	//대출도서반납
