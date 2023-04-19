@@ -95,14 +95,14 @@ public class BookUserMain {
 					dao.MyloanList(me_num);
 				}else if (no == 3) {	//대출도서반납
 					dao.MyloanList(me_num);
-					System.out.print("반납할 도서번호 : ");
-					int bNum = Integer.parseInt(br.readLine());
+					System.out.print("반납할 대출번호 : ");
+					int rNum = Integer.parseInt(br.readLine());
 					
-					int status = dao.isMyloanBook(bNum, me_num);
+					int status = dao.isMyloanBook(rNum, me_num);
 					if (status == 0) 
 						System.out.println("반납 불가");
 					else 
-						dao.returnBook(bNum, me_num);
+						dao.returnBook(rNum, me_num);
 				}else if (no == 4) {	//종료
 					System.out.println("로그아웃");
 					flag=false;

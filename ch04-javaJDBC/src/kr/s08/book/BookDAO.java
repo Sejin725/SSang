@@ -242,20 +242,27 @@ public class BookDAO {
 		try {
 			conn = DBUtil.getConnection();
 			
-			sql = "select b.bk_num bnum, m.me_name name, b.bk_name bname, r.re_regdate rdate "
+			sql = "select r.re_num rnum, b.bk_num bnum, r.re_status rst, m.me_name name, b.bk_name bname, r.re_regdate rdate, nvl(to_char(r.re_modifydate, 'yyyy-mm-dd'),null) mdate "
 					+ "from reservation r join book b on r.bk_num = b.bk_num "
-					+ "join member m on r.me_num = m.me_num "
-					+ "where r.re_status = 1";
+					+ "join member m on r.me_num = m.me_num ";
+					//+ "where r.re_status = 1";
 			
 			pstmt = conn.prepareStatement(sql);
 			rs = pstmt.executeQuery();
 			System.out.println("=====================================================");
-			System.out.println("책번호\t\t이름\t제목\t대여날짜");
+			System.out.println("대출번호\t책번호\t\t대여상태\t이름\t제목\t대여날짜\t반납날짜");
 			while (rs.next()) {
+				System.out.print(rs.getInt("rnum")+"\t\t");
 				System.out.print(rs.getInt("bnum")+"\t\t");
+				if (rs.getInt("rst")==1) {
+					System.out.print("대여중\t\t");
+				}else {
+					System.out.print("반납\t\t");
+				}
 				System.out.print(rs.getString("name")+"\t");
 				System.out.print(rs.getString("bname")+"\t");
-				System.out.println(rs.getDate("rdate")+"\t");
+				System.out.print(rs.getDate("rdate")+"\t");
+				System.out.println(rs.getString("mdate"));
 			}
 			System.out.println("=====================================================");
 		} catch (Exception e) {
@@ -274,7 +281,7 @@ public class BookDAO {
 		try {
 			conn = DBUtil.getConnection();
 			
-			sql = "select b.bk_num bnum, m.me_name name, b.bk_name bname, r.re_regdate rdate "
+			sql = "select r.re_num rnum, b.bk_num bnum, m.me_name name, b.bk_name bname, r.re_regdate rdate "
 					+ "from reservation r join book b on r.bk_num = b.bk_num "
 					+ "join member m on r.me_num = m.me_num "
 					+ "where m.me_num = ? and r.re_status = 1";
@@ -284,8 +291,9 @@ public class BookDAO {
 			rs = pstmt.executeQuery();
 			
 			System.out.println("=====================================================");
-			System.out.println("책번호\t\t이름\t제목\t대여날짜");
+			System.out.println("대출번호\t책번호\t\t이름\t제목\t대여날짜");
 			while (rs.next()) {
+				System.out.print(rs.getInt("rnum")+"\t\t");
 				System.out.print(rs.getInt("bnum")+"\t\t");
 				System.out.print(rs.getString("name")+"\t");
 				System.out.print(rs.getString("bname")+"\t");
@@ -299,7 +307,7 @@ public class BookDAO {
 		}
 	}
 	//반납 가능 여부 ? (내가 대여한 책인지 확인)
-	public int isMyloanBook(int bNum, int me_num) {
+	public int isMyloanBook(int rNum, int me_num) {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
@@ -309,10 +317,10 @@ public class BookDAO {
 		try {
 			conn = DBUtil.getConnection();
 			
-			sql = "select re_status from reservation where bk_num=? and me_num=?";
+			sql = "select re_status from reservation where re_num=? and me_num=?";
 			
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setInt(1, bNum);
+			pstmt.setInt(1, rNum);
 			pstmt.setInt(2, me_num);
 			rs = pstmt.executeQuery();
 			if (rs.next()) {
@@ -326,7 +334,7 @@ public class BookDAO {
 		return status;
 	}// end of isMyloanBook()---반납 가능 여부
 	//반납 처리
-	public void returnBook(int bNum, int me_num) {
+	public void returnBook(int rNum, int me_num) {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		String sql = null;
@@ -334,10 +342,10 @@ public class BookDAO {
 		try {
 			conn = DBUtil.getConnection();
 			
-			sql = "update reservation set re_status=0 where bk_num=? and me_num=? and re_status=1";
+			sql = "update reservation set re_status=0, re_modifydate=sysdate where re_num=? and me_num=? and re_status=1";
 			
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setInt(1, bNum);
+			pstmt.setInt(1, rNum);
 			pstmt.setInt(2, me_num);
 			
 			int count = pstmt.executeUpdate();
