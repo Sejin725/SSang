@@ -53,6 +53,7 @@ public class BookUserMain {
 						int count = dao.checkId(me_id);
 						if (count==0) 
 							break;
+						System.out.println("=== 이미 존재하는 아이디입니다 ===");
 					}
 					System.out.print("패스워드 : ");
 					String me_passwd = br.readLine();
@@ -92,17 +93,22 @@ public class BookUserMain {
 					else
 						System.out.println("해당 도서는 대여중입니다.");
 				}else if (no == 2) {	//My대출목록
-					dao.MyloanList(me_num);
+					if (dao.MyloanList(me_num)==false) {
+						System.out.println("대출한 도서가 존재하지않습니다.");
+					}
 				}else if (no == 3) {	//대출도서반납
-					dao.MyloanList(me_num);
-					System.out.print("반납할 대출번호 : ");
-					int rNum = Integer.parseInt(br.readLine());
-					
-					int status = dao.isMyloanBook(rNum, me_num);
-					if (status == 0) 
-						System.out.println("반납 불가");
-					else 
-						dao.returnBook(rNum, me_num);
+					if (dao.MyloanList(me_num)==true) {
+						System.out.print("반납할 대출번호 : ");
+						int rNum = Integer.parseInt(br.readLine());
+						
+						int status = dao.isMyloanBook(rNum, me_num);
+						if (status == 0) 
+							System.out.println("반납 불가");
+						else 
+							dao.returnBook(rNum, me_num);
+					}else {
+						System.out.println("반납할 도서가 존재하지 않습니다.");
+					}
 				}else if (no == 4) {	//종료
 					System.out.println("로그아웃");
 					flag=false;

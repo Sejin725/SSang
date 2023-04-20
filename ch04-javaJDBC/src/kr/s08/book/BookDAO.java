@@ -272,39 +272,57 @@ public class BookDAO {
 		}
 	}// end of loanBookList()---대출목록보기
 	//My 대출 목록 보기(회원 자신의 것만)
-	public void MyloanList(int me_num) {
+	public boolean MyloanList(int me_num) {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		String sql = null;
-		
+		boolean flag = false;
 		try {
 			conn = DBUtil.getConnection();
 			
-			sql = "select r.re_num rnum, b.bk_num bnum, m.me_name name, b.bk_name bname, r.re_regdate rdate "
+			sql = "select r.re_num rnum, b.bk_num bnum, m.me_name name, b.bk_name bname, r.re_regdate rdate, m.me_num mnum "
 					+ "from reservation r join book b on r.bk_num = b.bk_num "
 					+ "join member m on r.me_num = m.me_num "
 					+ "where m.me_num = ? and r.re_status = 1";
-			
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, me_num);
 			rs = pstmt.executeQuery();
 			
-			System.out.println("=====================================================");
-			System.out.println("대출번호\t책번호\t\t이름\t제목\t대여날짜");
-			while (rs.next()) {
-				System.out.print(rs.getInt("rnum")+"\t\t");
-				System.out.print(rs.getInt("bnum")+"\t\t");
-				System.out.print(rs.getString("name")+"\t");
-				System.out.print(rs.getString("bname")+"\t");
-				System.out.println(rs.getDate("rdate")+"\t");
+			/*
+			if (rs.next()) {
+				flag=true;
+				rs.beforeFirst();
+				System.out.println("=====================================================");
+				System.out.println("대출번호\t책번호\t\t이름\t제목\t대여날짜");
+				while (rs.next()) {
+					System.out.print(rs.getInt("rnum")+"\t\t");
+					System.out.print(rs.getInt("bnum")+"\t\t");
+					System.out.print(rs.getString("name")+"\t");
+					System.out.print(rs.getString("bname")+"\t");
+					System.out.println(rs.getDate("rdate")+"\t");
+				}
+				System.out.println("=====================================================");
 			}
-			System.out.println("=====================================================");
+			*/
+			if (rs.next()) {
+				flag=true;
+				System.out.println("=====================================================");
+				System.out.println("대출번호\t책번호\t\t이름\t제목\t대여날짜");
+				do {
+					System.out.print(rs.getInt("rnum")+"\t\t");
+					System.out.print(rs.getInt("bnum")+"\t\t");
+					System.out.print(rs.getString("name")+"\t");
+					System.out.print(rs.getString("bname")+"\t");
+					System.out.println(rs.getDate("rdate")+"\t");
+				}while(rs.next());
+			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
 			DBUtil.executeClose(rs, pstmt, conn);
 		}
+		return flag;
 	}
 	//반납 가능 여부 ? (내가 대여한 책인지 확인)
 	public int isMyloanBook(int rNum, int me_num) {
@@ -359,5 +377,6 @@ public class BookDAO {
 			DBUtil.executeClose(null, pstmt, conn);
 		}
 	}// end of returnBook()---반납 처리
+	
 	
 }
