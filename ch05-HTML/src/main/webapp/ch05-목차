@@ -64,6 +64,18 @@ ch05-cssText : Text의 css스타일
 	- s10 : 서버에 font를 저장해두고 불러와서 사용하는 방법
 	- s11 : 웹에서 font를 불러와서 사용하는 방법
 
+ch06-cssList
+	- s01 : ul, li 리스트의 기호, 위치, 이미지 속성
+	- s02 : list 목록의 가로, 세로 배치 방법
+	- s03 : list 목록으로 링크가 있는 가로메뉴 만들기(컬러포함)
 
+ch07-cssColor
+	- s01 : 색깔 표현 방법 (RGB)
+	- s02 : 색깔 표현 방법 투명포함(RGBA)
+	- s03 : 색깔 표현 방법 (HSL, HSLA)
+	- s04 : 배경이미지(background)의 옵션들
+	- s05 : 배경이미지(background)의 옵션중 반복(repeat), 위치(position)
 
+ch08-cssBox
+	- s01 : margin, padding(여백) 옵션 및 border의 여러가지 옵션들
 
