@@ -78,4 +78,11 @@ ch07-cssColor
 
 ch08-cssBox
 	- s01 : margin, padding(여백) 옵션 및 border의 여러가지 옵션들
+	- s02 : border의 둥글게 하는 옵션(css3)
+	- s03 : border의 둥글게 하는 옵션(css3)
+	- s04 : border의 그림자를 생성하는 옵션
 
+ch09-cssPosition
+	- s01 : css로 태그들의 위치를 이동하는 방법(absolute)
+	- s02 : css로 태그들의 위치를 이동하는 방법(relative)
+	- s03 : css로 태그들의 위치를 이동하는 방법(fixed)
