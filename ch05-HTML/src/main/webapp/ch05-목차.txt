@@ -101,10 +101,16 @@ ch11-cssTable
 
 ch12-cssTransform
 	- s01 : Transform CSS의 rotate(회전) 옵션
-	- s02 : 
-	- s03 : 
+	- s02 : Transform CSS의 scale(크기/확대/축소) 옵션
+	- s03 : Transform CSS의 skew(비틀림) 옵션
+	- s04 : Transform CSS의 translate(위치이동) 옵션
 
+ch13-cssMedia
+	- s01 : 뷰포트(media query) 디바이스별, 반응형 웹 디자인 만들기
 
+ch14-semantic
+	- s01 : semantic(시맨틱) 태그들을 사용하여 div 보다 편리하게 코드 관리하기
+	- s02 : semantic(시맨틱) 태그들을 사용하여 div 보다 편리하게 코드 관리하기 2
 
 
 
