@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>대문 만들기</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        a{cursor: pointer;}
+        ul{
+            display: block;
+            list-style-type: disc;
+            margin-block-start: 1em;
+            margin-block-end: 1em;
+            margin-inline-start: 0px;
+            margin-inline-end: 0px;
+            padding-inline-start: 40px;
+        }
+        /* 헤더 박스 */
+        #main_header{   
+            width: 100%;
+            height: 75px;
+            background: white;
+            border-bottom: 1px solid gray;
+            z-index: 9999;
+            position: fixed;
+            box-sizing: border-box;
+        }
+        /* 로고 이미지 */
+        .header-img > a > img{
+            position: absolute;
+            display: block;
+            width: 275px;
+            height: 60px;
+            margin: 5px 0px;
+            left: 20px;
+        }
+        /* 헤더 리스트 */
+        ul.header-list{
+            margin: 0 auto;
+            width: 400px;
+            height: 100%;
+            display: flex;
+            position: relative;
+            justify-content: space-between;
+        }
+        ul.header-list > li > a{
+            line-height: 76px;
+            font-size: 14px;
+            color: black;
+        }
+        /* 본문 시작 */
+        #main_content{
+            position: relative;
+            width: 100%;
+            height: 1430px;
+            background-color: white;
+            overflow: hidden;
+        }
+        #main_content_BG{
+            padding-top: 75px;
+            background-image: url("../files/mainBG.jpg");
+            background-size: 100% auto;
+            background-repeat: no-repeat;
+            background-position: center center;
+            width: 100%;
+            height: 490px;
+            overflow: hidden;
+            position: relative;
+        }
+        #main_content_BG_blind{
+            width: 100%;
+            height: 490px;
+            background-image: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7));
+        }
+        .main-text-wrap-align{
+            width: 1000px;
+            height: 100%;
+            position: relative;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+        .main-title{
+            position: relative;
+            width: calc(100% - 210px);
+            height: 150px;
+            left: 100px;
+            top: 94px;
+            margin-bottom: 145px;
+        }
+        .main-title-text{
+            width: 100%;
+            height: 100px;
+            font-size: 25px;
+            line-height: 40px;
+            box-sizing: border-box;
+            letter-spacing: -1px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+        }
+        .main-title-menu{
+            width: 880px;
+            margin: 0 auto;
+            height: 200px;
+        }
+        .menu-container{
+            width: 220px;
+            height: 115px;
+            padding: 20px 30px;
+            float: left;
+            margin-right: 20px;
+            position: relative;
+            color: white;
+            overflow: hidden;
+        }
+        .menu-container:nth-child(1){
+            background-color: #335c77;
+        }
+        .menu-container:nth-child(2){
+            background-color: #437474;
+        }
+        .menu-container:nth-child(3){
+            background-color: #325a8f;
+            margin-right: 0px;
+        }
+        .menu-title{
+            display: block;
+            width: 100%;
+            height: 40px;
+            font-size: 18px;
+            letter-spacing: -1px;
+            line-height: 30px;
+            margin-bottom: 8px;
+        }
+        .menu-content{
+            display: block;
+            width: 100%;
+            height: 65px;
+            line-height: 18px;
+            font-size: 13px;
+            letter-spacing: -1px;
+            float: left;
+        }
+        /* 주요서비스 */
+        .menu-content ul{
+            margin: 0;
+            padding: 0;
+        }
+        .menu-content li{
+            display: block;
+            width: 50%;
+            float: left;
+            height: 24px;
+            box-sizing: border-box;
+        }
+        .rightArrow{
+            width: 10px;
+            display: block;
+            font-size: 8px;
+            float: left;
+            height: 100%;
+            line-height: 25px;
+            font-weight: 900;
+        }
+        .contentA{
+            text-decoration: none;
+            color: white;
+        }
+        /* 주요서비스 끝 */
+        .menu-text{
+            width: calc(100% - 22px);
+            margin: 0px 0px 5px 0px;
+            float: left;
+            height: 20px;
+        }
+
+        /* Footer_Wrap */
+        #footer_wrap{
+            width: 100%;
+            height: 225px;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <header id="main_header">
+        <div class="header-img">
+            <a href="#"><img src="../files/logoBlack.png" alt="logo"></a>
+        </div>
+        <ul class="header-list">
+            <li><a>협회소개</a></li>
+            <li><a>대회안내</a></li>
+            <li><a>선수등록</a></li>
+            <li><a>자료실</a></li>
+        </ul>
+    </header>
+    <!-- 머리 종료 -->
+    <div id="main_content">
+        <div id="main_content_BG">
+            <div id="main_content_BG_blind">
+                <div class="main-text-wrap-align">
+                    <div class="main-title">
+                        <div class="main-title-text">
+                            골프협회는 골프발전과 골프를 사랑하는 시민들을 위해 노력하겠습니다.<br>
+                            세종특별자치시 선수 및 동호인 여러분 그리고 홈페이지를 방문해 주시는 여러분 많은 격려 부탁드립니다.
+                        </div>
+                    </div>
+                    <div class="main-title-menu">
+                        <div class="menu-container">
+                            <span class="menu-title">주요서비스</span>
+                            <div class="menu-content">
+                                <ul>
+                                    <li>
+                                        <a href="#" class="contentA"><i class="rightArrow"></i><span>&nbsp;골프규칙</span></a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="contentA"><i class="rightArrow"></i><span>&nbsp;협회소개</span></a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="contentA"><i class="rightArrow"></i><span>&nbsp;협회연혁</span></a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="contentA"><i class="rightArrow"></i><span>&nbsp;분과위원회</span></a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="contentA"><i class="rightArrow"></i><span>&nbsp;포토갤러리</span></a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="contentA"><i class="rightArrow"></i><span>&nbsp;17개시도골프협회</span></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="menu-container">
+                            <span class="menu-title">대회안내</span>
+                            <span class="menu-content">
+                                <p class="menu-text">
+                                    <a href="#" class="contentA">2023년 세종특별자치시골프 . . .</a>
+                                </p>
+                                <p class="menu-text">
+                                    <a href="#" class="contentA">제52회 전국소년체육대회 세 . . .</a>
+                                </p>
+                                <p class="menu-text">
+                                    <a href="#" class="contentA">2023 전국생활체육대축전/ . . .</a>
+                                </p>
+                            </span>
+                        </div>
+                        <div class="menu-container">
+                            <span class="menu-title">공지사항</span>
+                            <span class="menu-content">
+                                <p class="menu-text">
+                                    <a href="#" class="contentA">골프 규칙에 대한 설명(CI . . .</a>
+                                </p>
+                                <p class="menu-text">
+                                    <a href="#" class="contentA">골프 규칙에 대한 설명(CI . . .</a>
+                                </p>
+                                <p class="menu-text">
+                                    <a href="#" class="contentA">2023년 경기안(전문선수, . . .</a>
+                                </p>
+                            </span>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 머리 아래 컨텐츠 종료 -->
+    <footer id="footer_wrap">
+
+    </footer>
+</body>
+</html>
