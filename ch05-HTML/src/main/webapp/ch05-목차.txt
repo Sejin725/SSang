@@ -111,6 +111,11 @@ ch13-cssMedia
 ch14-semantic
 	- s01 : semantic(시맨틱) 태그들을 사용하여 div 보다 편리하게 코드 관리하기
 	- s02 : semantic(시맨틱) 태그들을 사용하여 div 보다 편리하게 코드 관리하기 2
+	- s03 : semantic(시맨틱) 태그들을 사용하여 페이지 만들기
+	- s04 : semantic(시맨틱) 태그들을 사용하여 페이지 만들기 (CSS 활용)
+
+ch15-jsBasic
+	- s01 : 
 
 
 
