@@ -9,15 +9,16 @@
             padding: 0;
         }
         a{cursor: pointer;}
-        ul{
+        li{list-style-type: none;}
+        /* ul{
             display: block;
-            list-style-type: disc;
+            list-style-type: none;
             margin-block-start: 1em;
             margin-block-end: 1em;
             margin-inline-start: 0px;
             margin-inline-end: 0px;
             padding-inline-start: 40px;
-        }
+        } */
         /* 헤더 박스 */
         #main_header{   
             width: 100%;
@@ -46,16 +47,27 @@
             position: relative;
             justify-content: space-between;
         }
-        ul.header-list > li > a{
+        ul.header-list > li:nth-child(even){
+            position: relative;
+            height: 100%;
+            width: 3px;
+        }
+        ul.header-list > li:nth-child(even) a{
+            line-height: 65px;
+        }
+        ul.header-list a{
             line-height: 76px;
             font-size: 14px;
             color: black;
+        }
+        ul.header-list a:hover{
+            color: #0070c9;
         }
         /* 본문 시작 */
         #main_content{
             position: relative;
             width: 100%;
-            height: 1430px;
+            height: 905px;
             background-color: white;
             overflow: hidden;
         }
@@ -182,6 +194,155 @@
             height: 225px;
             position: relative;
         }
+        #footer_content{
+            width: 880px;
+            height: 100%;
+            position: relative;
+            background-color: white;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        .footer-content-list{
+            width: 100%;
+            height: 125px;
+            padding: 50px 0px;
+        }
+        .footer-content-list ul{
+            width: 100%;
+            height: 100%;
+        }
+        .footer-content-list li{
+            width: 32%;
+            height: 100%;
+            float: left;
+            margin-right: 17.5px;
+            position: relative;
+        }
+        .footer-content-list li:nth-child(3){
+            margin-right: 0px;
+        }
+        .footer-content-list li .title1{
+            display: block;
+            width: 80px;
+            height: 30px;
+            font-size: 16px;
+            margin-left: 20px;
+            letter-spacing: -1px;
+            cursor: pointer;
+        }
+        .footer-content-list li .title2{
+            display: block;
+            width: calc(100% - 20px);
+            height: 60px;
+            font-size: 12px;
+            padding-left: 20px;
+            letter-spacing: -1px;
+        }
+        .footer-content-list li .title3{
+            width: calc(100% - 20px);
+            height: 23px;
+            font-size: 12px;
+            padding-left: 20px;
+            text-align: left;
+            letter-spacing: -1px;
+        }
+        .footer-content-list li .title3 span{
+            display: block;
+            width: 50px;
+            height: 100%;
+            font-size: 12px;
+            float: left;
+            line-height: 20px;
+            border-bottom: 1px solid black;
+            font-weight: bold;
+            box-sizing: border-box;
+            cursor: pointer;
+        }
+        .footer-content-list li:nth-child(1) img{
+            width: 130px;
+            height: 100px;
+            position: absolute;
+            top: 30px;
+            right: 0px;
+        }
+        .footer-content-list li:nth-child(2) img{
+            width: 125px;
+            height: 100px;
+            position: absolute;
+            top: 30px;
+            right: 0px;
+        }
+        .footer-content-list li:nth-child(3) img{
+            width: 130px;
+            height: 100px;
+            position: absolute;
+            top: 30px;
+            right: 0px;
+        }
+
+        /* foot */
+
+        #foot{
+            width: 100%;
+            height: 80px;
+            background-color: #f5f5f7;
+            padding-top: 20px;
+            padding-bottom: 15px;
+            overflow: hidden;
+        }
+        .foot-wrap{
+            width: 980px;
+            height: 70px;
+            padding-bottom: 10px;
+            margin: 0 auto;
+        }
+        .foot-container1{
+            width: 100%;
+            height: 25px;
+            padding-bottom: 7px;
+            margin-bottom: 8px;
+            color: #737378;
+            border-bottom: 1px solid #d2d2d7;
+            box-sizing: border-box;
+            font-size: 12px;
+        }
+        .foot-container1 a{
+	        color: #2a7fd3;
+            text-decoration: none;
+	    }
+        .foot-container2{
+            margin-top: 5px;
+            width: 100%;
+            height: 26px;
+        }
+        .copyright{
+            font-size: 12px;
+            color: #737378;
+            width: 350px;
+            float: left;
+            margin-right: 30px;
+        }
+        .others{
+            width: 600px;
+            float: left;
+            font-size: 12px;
+        }
+        .others a{
+            display: inline-block;
+            margin-right: 10px;
+            padding-right: 10px;
+            border-right: 1px solid #d2d2d7;
+            color: #424245 !important;
+            font-weight: 400;
+            text-decoration: none;
+        }
+        .others p{
+            float: right;
+        }
+        .foot-container3{
+            color: #999999;
+            font-size: 12px;
+        }
     </style>
 </head>
 <body>
@@ -191,8 +352,11 @@
         </div>
         <ul class="header-list">
             <li><a>협회소개</a></li>
+            <li><a>.</a></li>
             <li><a>대회안내</a></li>
+            <li><a>.</a></li>
             <li><a>선수등록</a></li>
+            <li><a>.</a></li>
             <li><a>자료실</a></li>
         </ul>
     </header>
@@ -261,15 +425,59 @@
                                 </p>
                             </span>
                         </div>
-                        
                     </div>
                 </div>
             </div>
         </div>
+        <!-- 머리 아래 컨텐츠 종료 -->
+        <footer id="footer_wrap">
+            <div id="footer_content">
+                <div class="footer-content-list">
+                    <ul>
+                        <li>
+                            <span class="title1">마이페이지</span>
+                            <span class="title2">세종특별자치시골프협회에<br>오신것을 환영합니다.</span>
+                            <div class="title3"><span>바로가기</span></div>
+                            <img src="../files/main1.png" alt="">
+                        </li>
+                        <li>
+                            <span class="title1">주변 골프장</span>
+                            <span class="title2">세종특별자치시 주변 아름답고<br>우수한 골프장을 소개합니다.</span>
+                            <div class="title3"><span>바로가기</span></div>
+                            <img src="../files/main2.png" alt="">
+                        </li>
+                        <li>
+                            <span class="title1">오시는 길</span>
+                            <span class="title2">세종특별자치시골프협회로<br>오시는 길을 안내해드립니다.</span>
+                            <div class="title3"><span>바로가기</span></div>
+                            <img src="../files/main3.png" alt="">
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div id="foot">
+                <div class="foot-wrap">
+                    <div class="foot-container1">
+                        문의방법: 세종특별자치시골프협회 문의사항은 <a href="#"> ###-###-#### </a>으로 연락하세요.
+                    </div>
+                    <div class="foot-container2">
+                        <div class="copyright">
+                            Copyright &copy; 1998-2.18.Sejong Golf Association 모든 권리 보유.
+                        </div>
+                        <div class="others">
+                            <a href="#">웹 사이트 이용약관</a>
+                            <a href="#">개인정보 처리방침</a>
+                            <a href="#">이메일 무단 수집거부</a>
+                            <a href="#">사이트 맵</a>
+                            <p>대한민국</p>
+                        </div>
+                    </div>
+                    <div class="foot-container3">
+                        주소 : 세종특별자치시 ###### 52 #####2 317호 | 대표전화 : ### - ### - #### | 팩스 : ### - ### - #### | 이메일 : sga_####@#####.com
+                    </div>
+                </div>
+            </div>
+        </footer>
     </div>
-    <!-- 머리 아래 컨텐츠 종료 -->
-    <footer id="footer_wrap">
-
-    </footer>
 </body>
 </html>
