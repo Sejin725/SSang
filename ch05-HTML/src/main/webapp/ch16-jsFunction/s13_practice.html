@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>성적 처리</title>
+</head>
+<body>
+    <script>
+        /*
+        [실습]국어, 영어, 수학 성적을 prompt로 입력 받아서 총점, 평균, 등급을 출력하는 프로그램 작성
+        총점(getSum), 평균(getAvg), 등급(getGrade)을 구하는 함수를 정의
+
+        [출력예시]
+        총점 : 000
+        평균 : 00
+        등급 : 0
+        */
+        function getSum(korean, english, math) {
+            return korean + english + math;
+        }
+        function getAvg(sum) {
+            return Math.trunc(sum/3);
+        }
+        function getGrade(avg) {
+            var grade;
+            switch ( Math.trunc(avg/10)) {
+                case 10:
+                case 9: grade='A'; break;
+                case 8: grade='B'; break;
+                case 7: grade='C'; break;
+                case 6: grade='D'; break;
+                default: grade='F'; break;
+            }
+            return grade;
+        }
+
+        //입력
+        var korean = Number(prompt('국어 : ',''));
+        var english = Number(prompt('영어 : ',''));
+        var math = Number(prompt('수학 : ',''));
+
+        //함수 호출 및 출력
+        var sum = getSum(korean, english, math);
+        var avg = getAvg(sum);
+
+        document.write('총점 : ' + sum + '<br>');
+        document.write('평균 : ' + avg + '<br>');
+        document.write('등급 : ' + getGrade(avg) + '<br>');
+
+        document.write('총점 : ' + getSum(korean, english, math) + '<br>');
+        document.write('평균 : ' + getAvg(getSum) + '<br>');
+        document.write('등급 : ' + getGrade(getAvg) + '<br>');
+
+    </script>
+</body>
+</html>
