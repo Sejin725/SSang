@@ -22,7 +22,7 @@
             return Math.trunc(sum/3);
         }
         function getGrade(avg) {
-            var grade;
+            let grade;
             switch ( Math.trunc(avg/10)) {
                 case 10:
                 case 9: grade='A'; break;
@@ -35,13 +35,13 @@
         }
 
         //입력
-        var korean = Number(prompt('국어 : ',''));
-        var english = Number(prompt('영어 : ',''));
-        var math = Number(prompt('수학 : ',''));
+        let korean = Number(prompt('국어 : ',''));
+        let english = Number(prompt('영어 : ',''));
+        let math = Number(prompt('수학 : ',''));
 
         //함수 호출 및 출력
-        var sum = getSum(korean, english, math);
-        var avg = getAvg(sum);
+        let sum = getSum(korean, english, math);
+        let avg = getAvg(sum);
 
         document.write('총점 : ' + sum + '<br>');
         document.write('평균 : ' + avg + '<br>');
