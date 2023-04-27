@@ -11,18 +11,40 @@
         ES6에서 변수를 정의할 떄 let 사용하고 상수를 정의할 때 const를 사용할 수 있도록 문법을 추가
     */  
    for (let i = 1; i <= 3; i++) {
-           
+    document.write(i + '<br>'); 
    }
-   document.write(i + '<br>'); 
+   //블록 레벨 스코프인 let을 사용해서 제어문안에서 선언된 변수는 제어문이 종료되면 소멸
+   //document.write(i + '<br>'); 
+   document.write('~~~~~~~~~~~~~~~~~~~~~<br>');
 
+   let i;   //전역변수
+   for(i=1; i<=3; i++){
+    document.write(i + '<br>');
+   }
+   document.write(i + '<br>');
+   document.write('-------------------<br>');
 
+   function test() {
+        let i = 20; //전역변수명과 지역변수명이 같으면 지역변수 우선
+        document.write(i + '<br>');
+   }
 
+   //함수 호출
+   test();
+   document.write('-------------------<br>');
 
+   function test2() {
+        let m = 100;
+        for (let m = 1; m < 3; m++) {
+            document.write(m + '<br>');
+        }
+        document.write('-------------------<br>');
+        document.write(m + '<br>');
+   }
 
+   //함수 호출
+   test2();
 
-
-
-   
     </script>
 </body>
 </html>

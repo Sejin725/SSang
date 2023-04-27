@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function returnTest() {
+            document.write('프로그램 끝<br>');
+            
+            for(let i=1; i<10; i++){
+                if(i==5){
+                    //특정 조건일 때 반복문을 빠져나감
+                    //break;
+
+                    //특정 조건일 때 함수를 빠져나감
+                    return;
+                }
+                document.write(i + '<br>');
+            }
+            document.write('문장B<br>');
+        }
+        //함수호출
+        returnTest();
+        document.write('프로그램 끝<br>');
+    </script>    
+</body>
+</html>
