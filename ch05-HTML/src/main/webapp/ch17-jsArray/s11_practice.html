@@ -19,30 +19,56 @@
         최대값 : 30
         최소값 : 2
     */
+        // let score = [];
+
+        // for (let i = 0; i < 5; i++) {
+        //     score.push(Number(prompt((i+1)+' 번째 수 : ',''))); 
+        // }
+        // let max,min;
+        
+        // score.forEach(function(element,index,array){
+        //     if(index==0){
+        //         max=element;
+        //         min=element;
+        //     }
+        //     if(max<element){
+        //         max=element;
+        //     }
+        //     if(min>element){
+        //         min=element;
+        //     }
+        // });
+
+        // document.write('배열에 저장된 숫자 : '+ score +'<br>');
+        // document.write('최대값 : '+max+'<br>');
+        // document.write('최소값 : '+min);
+
+
         let score = [];
 
-        for (let i = 0; i < 5; i++) {
-            score.push(Number(prompt((i+1)+' 번째 수 : ',''))); 
-        }
-        let max,min;
-        
-        score.forEach(function(element,index,array){
-            if(index==0){
-                max=element;
-                min=element;
-            }
-            if(max<element){
-                max=element;
-            }
-            if(min>element){
-                min=element;
-            }
-        });
+   let num1 = prompt('첫번째 수 : ','');
+   let num2 = prompt('두번째 수 : ','');
+   let num3 = prompt('세번째 수 : ','');
+   let num4 = prompt('네번째 수 : ','');
+   let num5 = prompt('다섯번째 수 : ','');
 
-        document.write('배열에 저장된 숫자 : '+ score +'<br>');
-        document.write('최대값 : '+max+'<br>');
-        document.write('최소값 : '+min);
+   score.push(num1,num2,num3,num4,num5);
 
+   let max = score[0], min =score[0];
+   
+   score.forEach(function(element,index,array){
+      if(max < element){
+         max = element;
+      }
+      if(min > element){
+         min = element;
+      }
+   });
+
+   document.write(
+      '배열에 저장된 숫자 : ' + score + '<br>');
+      document.write('최대값 : ' + max + '<br>');
+      document.write('최소값 : ' + min);
     </script>
 </body>
 </html>

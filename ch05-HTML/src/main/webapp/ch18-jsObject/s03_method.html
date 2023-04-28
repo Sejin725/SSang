@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>객체의 속성과 메서드 사용</title>
+</head>
+<body>
+    <script>
+        let name= '장영실'; //전역변수
+        //객체생성
+        let person = {
+            //속성지정
+            name:'홍길동',
+            //메서드지정
+            eat:function(food){
+                let name='강호동';  //지역변수 우선
+                //this : 메서드 내에서 자기자신이 가지고있는 속성 (또는 메서드)를 호출하고 싶을 때,
+                //       객체 내부에서 객체를 참조하는 역할 수행
+                //       this를 명시하지 않으면 전역변수 또는 지역변수 호출
+                alert(name + ' 이 ' + food + '을 먹습니다.');
+            }
+        };
+        //객체의 메서드 호출
+        person.eat('밥');
+    </script>
+</body>
+</html>
