@@ -155,6 +155,7 @@ ch16-jsFunction
 	- s19 : isNaN함수
 	- s20 : parseInt, Float | String의 숫자 형변환 방법
 
-
+ch17-jsArray
+	- s01 : 
 
 
