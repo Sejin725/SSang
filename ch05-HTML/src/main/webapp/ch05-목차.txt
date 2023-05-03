@@ -203,8 +203,22 @@ ch20-jsNestedObject
 	- s02 : Date함수의 다양한 메서드 [년, 월, 일, 시, 분, 초 ,밀리초]
 	- s03 : Date함수를 이용한 시계 만들기 [window.onload - 창이 로딩되면 함수호출], [window.setInterval - 일정 시간마다 함수 반복호출]
 	- s04 : Math함수의 다양한 메서드
-	- s06 : 
-	- s07 : 
-	- s08 : 
-	- s09 : 
-	- s10 : 
+	- s06 : toFixed() - 반올림 처리, toLocaleString() - 숫자 3자리마다 "," 처리 (돈, 단위)
+	- s07 : String.length - String 길이
+	- s08 : String.toUpperCase() - 영문자 대문자로 변경하기
+	- s09 : indexOf() - 특정문자를 체크하여 해당인덱스의 위치값 반환 (이메일 체크 테스트)
+	- s10 : String의 메서드 사용 (charAt, indexOf, substring, substr, toUpperCase, toLowerCase, concat, split)
+
+ch21-jsDOM
+	- s01 : getElementsByTagName(배열로 반환) - 태그명을 통해서 문서객체 탐색
+	- s02 : 태그명을 이용한 문서객체 탐색, innerHTML = '태그내부에 글자입력'; 
+	- s03 : getElementById - id를 이용한 문서객체 탐색
+	- s04 : ID와 태그명을 이용한 문서객체 탐색
+	- s05 : name 속성을 이용한 문서객체 탐색
+	- s06 : getElementsByName(배열로 반환) - name 속성을 이용한 문서객체 탐색
+	- s07 : querySelector(css선택자) - querySelector를 이용한 문서객체 탐색 [최상단 태그에 접근만 허용]
+	- s08 : querySelectorAll - querySelectorAll을 이용한 태그 탐색 [자식요소 탐색시 사용]
+	- s09 : createElement : 태그생성, createTextNode : 태그내 텍스트 생성, appendChild : 노드연결 - 문서객체 생성
+	- s10 : 문서객체의 속성 제어
+	- s11 : innerHTML 속성을 이용한 태그 생성 (innerHTML, textContent)
+	- s12 : removeChild(태그지정객체명), innerHTML = ''; : 모두제거 - 문서객체 제거
