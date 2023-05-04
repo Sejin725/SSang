@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>location</title>
+</head>
+<body>
+    <!-- href는 순수 링크만을 값으로 입력하는데에 반해, assign은 함수로 호출하는 방식이다. -->
+    <input type="button" value="이동(href)" onclick="location.href='s02_window.html'" >
+    <input type="button" value="이동(assign)" onclick="location.assign('s04_location.html')">
+    <!-- replace는 history정보를 다 삭제해서 뒤로가기가 불가능 하다. -->
+    <input type="button" value="이동(replace)" onclick="location.replace('s02_window.html')">
+</body>
+<!-- 새로고침 -->
+<input type="button" value="새로고침" onclick="location.reload()">
+</html>

@@ -1,23 +1,19 @@
 public class Solution {
 
 
-    // 배열을 2배 반환 알고리즘
-    public int solution(int[] array, int n) {
-        int answer = 0;
-        for (int i = 0; i < array.length; i++) {
-            if(array[i]==n)
-                answer++;
+    public String solution(String my_string) {
+        String answer = "";
+        for (int i = my_string.length()-1; i >= 0; i--) {
+            answer += my_string.charAt(i);
         }
         return answer;
     }
 
     public static void main(String[] args) {
         Solution s = new Solution();
-        int[] a = {1,2,3,4,5};
-        int b = s.solution(a,1);
-        // for (int i : b) {
-        //     System.out.println(i+" ");
-        // }
+        System.out.println(s.solution("workspace"));
+
+
     }
 }
 
