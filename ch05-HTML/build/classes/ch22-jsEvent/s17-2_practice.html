@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>강사님 스타일</title>
+    <script>
+        function check(course,name){
+            if(course.value.trim()==''){
+                alert(name + ' 성적을 입력하세요');
+                course.value='';
+                course.focus();
+                return false;
+            }
+            if(isNaN(course)){
+                alert(name + ' 성적은 숫자만가능');
+                course.value='';
+                course.focus();
+                return false;
+            }
+            if(course.value > 100 || course.value < 0){
+                alert(name + ' 성적은 0~100까지만 입력가능');
+                course.value='';
+                course.focus();
+                return false;
+            }
+            return ture;
+        }
+        window.onload=function(){
+            let submit_btn = document.getElementById('submit_btn');
+
+            submit_btn.onclick=function(){
+                let korean = document.getElementById('korean');
+                let english = document.getElementById('english');
+                let math = document.getElementById('math');
+
+                if(!check(korean,'국어'))
+                    return;
+                
+                if(!check(english,'영어'))
+                    return;    
+
+                if(!check(math,'수학'))
+                    return;
+
+                let sum = Number(korean.value) + Number(english.value) + Number(math.value);
+                let avg = sum/3;
+
+                alert('국어 : ' + korean.value + 
+                '\n영어 : ' + english.value +
+                '\n수학 : ' + math.value + 
+                '\n총점 : ' + sum + 
+                '\n평균 : ' + avg.toFixed(2));
+            };
+        };
+
+    </script>
+</head>
+<body>
+<form action="" name="form1" id="score_form">
+    국어 <input type="text" name="korean" id="korean" placeholder="0~100"><br>
+    영어 <input type="text" name="english" id="english" placeholder="0~100"><br>
+    수학 <input type="text" name="math" id="math" placeholder="0~100"><br>
+    <input type="button" value="확인" id="submit_btn">
+</form>
+</body>
+</html>

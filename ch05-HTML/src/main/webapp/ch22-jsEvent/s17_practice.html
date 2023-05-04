@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>실습</title>
+    <script>
+    /*
+    [실습]
+    국어, 영어, 수학을 입력 받아서 총점, 평균을 구하여 출력.
+    출력은 alert()를 이용함. 출력은 국어, 영어, 수학, 총점, 평균
+    평균은 소수점 둘째자리까지 출력.
+    유효성 검사 : 국어, 영어, 수학은 값을 꼭 입력 || 숫자만 받아들임 || 0부터 100까지 입력가능
+    */
+    function ischeck(num){
+            if(isNaN(num.value)){
+                alert('숫자만 입력하세요');
+                num.value='';
+                num.focus();
+                return false;
+            }
+            if(num.value > 100 || num.value < 0){
+                alert('0부터 100까지 입력가능');
+                num.value='';
+                num.focus();
+                return false;
+            }else{
+                return true;
+            }
+    }
+    window.onload=function(){
+        document.getElementById('submit').onclick=function(){
+            let korean = document.getElementById('korean');
+            let english = document.getElementById('english');
+            let math = document.getElementById('math');
+
+            // 국어
+            if(korean.value.trim()==''){
+                alert('국어점수를 입력하세요');
+                korean.value='';
+                korean.focus();
+                return;
+            }
+            if(!ischeck(korean)){
+                return;
+            }
+
+            // 영어
+            if(english.value.trim()==''){
+                alert('영어점수를 입력하세요');
+                english.value='';
+                english.focus();
+                return;
+            }
+            if(!ischeck(english)){
+                return;
+            }
+
+            // 수학
+            if(math.value.trim()==''){
+                alert('수학점수를 입력하세요');
+                math.value='';
+                math.focus();
+                return;
+            }
+            if(!ischeck(math)){
+                return;
+            }
+
+            // }
+            let score = Number(korean.value) + Number(english.value) + Number(math.value);
+            let average = score/3;
+
+            alert('국어 : ' + korean.value + 
+            '\n영어 : ' + english.value +
+            '\n수학 : ' + math.value + 
+            '\n총점 : ' + score + 
+            '\n평균 : ' + average.toFixed(2));
+        };
+    };
+
+    </script>
+</head>
+<body>
+<form>
+    국어 <input type="text" name="korean" id="korean" placeholder="0~100"><br>
+    영어 <input type="text" name="english" id="english" placeholder="0~100"><br>
+    수학 <input type="text" name="math" id="math" placeholder="0~100"><br>
+    <input type="button" value="확인" id="submit">
+</form>
+</body>
+</html>

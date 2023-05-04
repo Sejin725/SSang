@@ -28,7 +28,7 @@
             // 뒤로가기
             document.getElementById('prev').onclick=function(){
                 num--;
-                if(num<=0) num==7;
+                if(num<1) num==7;
 
                 gallery.src = '../files/img' + num + '.jpg';
                 
