@@ -211,7 +211,7 @@ ch20-jsNestedObject
 
 ch21-jsDOM
 	- s01 : getElementsByTagName(배열로 반환) - 태그명을 통해서 문서객체 탐색
-	- s02 : 태그명을 이용한 문서객체 탐색, innerHTML = '태그내부에 글자입력'; 
+	- s02 : 태그명을 이용한 문서객체 탐색, innerHTML = '태그내부에 글자입력';
 	- s03 : getElementById - id를 이용한 문서객체 탐색
 	- s04 : ID와 태그명을 이용한 문서객체 탐색
 	- s05 : name 속성을 이용한 문서객체 탐색
@@ -222,3 +222,6 @@ ch21-jsDOM
 	- s10 : 문서객체의 속성 제어
 	- s11 : innerHTML 속성을 이용한 태그 생성 (innerHTML, textContent)
 	- s12 : removeChild(태그지정객체명), innerHTML = ''; : 모두제거 - 문서객체 제거
+	- s13 : 
+
+ch22-jsEvent	(권장사항 : 스크립트내에서 이벤트 연결)
