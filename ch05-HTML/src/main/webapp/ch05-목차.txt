@@ -225,3 +225,20 @@ ch21-jsDOM
 	- s13 : 
 
 ch22-jsEvent	(권장사항 : 스크립트내에서 이벤트 연결)
+	- s01 : 인라인 이벤트 처리
+	- s02 : 인라인 이벤트 처리 - 함수 이용
+	- s03 : 인라인 이벤트 처리 - 함수 이용 (click) 이벤트
+	- s04 : mouseover/mouseout Event
+	- s05 : onchange (focus를 벗어날경우 수행)
+	- s06 : Submit시, check()를 통한 무결성 체크
+	- s07 : window.onload=function(){} - 윈도우가 로드될 때 함수를 호출
+	- s08 : click 이벤트를 스크립트에서 연결하기
+	- s09 : click 이벤트를 스크립트에서 연결하기
+	- s10 : 스크립트 위치에 따른 로드 방법
+	- s11 : radio버튼 태그 이벤트 연결하기
+	- s12 : mouseover/mouseout - 이미지 크기 변경
+	- s13 : key(키보드)입력에 따른 이벤트 처리 방법
+	- s14 : isNaN, trim 메서드를 활용한 무결성 체크
+	- s15 : form.onsubmit - submit 버튼 클릭시 무결성 체크 하기
+	- s16 : 이미지 넘기기, 뒤로가기 구현하기
+	- s17 : 

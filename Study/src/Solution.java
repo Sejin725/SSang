@@ -1,18 +1,24 @@
 public class Solution {
 
 
-    public String solution(String my_string) {
-        String answer = "";
-        for (int i = my_string.length()-1; i >= 0; i--) {
-            answer += my_string.charAt(i);
+    public int solution(int[] numbers) {
+        int a = numbers[0], b = numbers[0];
+        for (int i = 0; i < numbers.length; i++) {
+            if(numbers[i] > a )
+                a = numbers[i];
         }
-        return answer;
+        for (int i = 0; i < numbers.length; i++) {
+            if(numbers[i] < a && numbers[i] > b)
+                b = numbers[i];
+        }
+        return a*b;
     }
 
     public static void main(String[] args) {
         Solution s = new Solution();
-        System.out.println(s.solution("workspace"));
-
+        int a[] = {0, 31, 24, 10, 1, 9};
+        //System.out.println(s.solution("workspace"));
+        System.out.println(s.solution(a));
 
     }
 }
