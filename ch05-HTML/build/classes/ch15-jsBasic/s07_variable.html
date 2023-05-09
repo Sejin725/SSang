@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>변수 사용시 주의사항</title>
+</head>
+<body>
+    <script>
+        var food = '김치찌개';  //변수 선언 및 초기화
+        document.write(food + '<br>');
+
+        // 데이터변경
+        food = '라면';
+        document.write(food + '<br>');
+        document.write('~~~~~~~~~~<br>');
+
+        //변수명이 길게 선언하여도 오류가 발생하지 않음
+        var food = '냉면';  //변수 선언 및 초기화
+        document.write(food + '<br>');
+    </script>
+</body>
+</html>
