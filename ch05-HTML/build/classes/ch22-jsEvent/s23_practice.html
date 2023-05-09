@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>실습</title>
+    <style>
+        h1{
+            text-align: center;
+        }
+        div#game{
+            width: 480px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .user-option{
+            cursor: pointer;
+        }
+        div.result-img{
+            position: relative;
+            width: 220px;
+            float: left;
+        }
+        div.result-img:first-child{
+            text-align: right;
+        }
+        div.result-img:last-child{
+            text-align: left;
+        }
+        div.result-img span{
+            font-size: 20px;
+            font-weight: bold;
+            border-radius: 20px;
+            width: 30px;
+            text-align: center;
+            background-color: #f4f2c6;
+            position: absolute;
+            top: 25%;
+            left: 45%;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            let userOption = document.getElementsByClassName('user-option');
+            //let gameImage = document.querySelectorAll('.result-img img');
+
+            //3개중 1개 클릭시
+            for (let i = 0; i < userOption.length; i++) {
+                userOption[i].onclick=function(){
+                    let user = Number(this.id.substr(4));
+                    let com = Math.floor(Math.random()*3);
+                    console.log(user);
+                    console.log(com);
+                    
+                    // 유저 이기는 조건
+                    if((user==0 && com==2)||(user==1 && com==0)||(user==2 && com==1)){
+                        result(user,com);
+                        let spans = document.getElementsByTagName('span');
+                        spans[0].innerHTML='패';
+                        spans[1].innerHTML='승';
+                    }else if(user==com){
+                        result(user,com);
+                        let spans = document.getElementsByTagName('span');
+                        spans[0].innerHTML='무';
+                        spans[1].innerHTML='무';
+                    }else{
+                        result(user,com);
+                        let spans = document.getElementsByTagName('span');
+                        spans[0].innerHTML='승';
+                        spans[1].innerHTML='무';
+                    }
+                };
+            }
+            function result(user,com){
+                //let rImg = document.getElementsByClassName('result-img');
+                let rImg = document.querySelectorAll('.result-img img');
+                for (let i = 0; i < rImg.length; i++) {
+                    rImg[i].style.display='';
+                    if(i==0)
+                        rImg[i].src='../files/timg'+String(com)+'.png';
+                    else
+                        rImg[i].src='../files/timg'+String(user)+'.png';
+                }
+            } // end of result()--
+        };
+    </script>
+</head>
+<body>
+<h1>가위바위보 게임</h1>
+<div id="game">
+    <div>
+        <img class="user-option" id="timg0" src="../files/timg0.png" width="90">
+        <img class="user-option" id="timg1" src="../files/timg1.png" width="90">
+        <img class="user-option" id="timg2" src="../files/timg2.png" width="90">
+    </div>
+    <div>
+        <div class="result-img">
+            <img style="display: none;" alt="컴퓨터" width="150">
+            <span></span>
+        </div>
+        <div class="result-img">
+            <img style="display: none;" alt="사용자" width="150">
+            <span></span>
+        </div>
+    </div>
+</div>
+</body>
+</html>
