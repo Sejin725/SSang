@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery-addClass</title>
+    <style>
+        .item{color:red;}
+        .select{background-color: yellow;}
+
+    </style>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            //하나의 속성 제어
+            //$('img').attr('width',100);
+
+            //복수의 속성 제어
+            //$('img').attr('width',150).attr('height',150);
+
+            //객체로 만들어서 속성 반환
+            $('img').attr({width:200,height:200});
+
+        });
+    </script>
+</head>
+<body>
+    <img src="../files/blue.jpg" alt="">
+    <img src="../files/flower.jpg" alt="">
+    <img src="../files/winter.jpg" alt="">
+</body>
+</html>

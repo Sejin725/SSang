@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery</title>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function(){
+            $('div').html(function(index){
+                return '<h2>Header-' + index + '</h2>';
+            });
+
+            $('h1').html(function(index,html){
+                //index : 배열의 index
+                //html : index를 통해서 요소(태그)의 데이터 반환 
+                return '<p>p태그내용</p>' + html + '**';
+            });
+        });
+    </script>
+</head>
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+
+    <h1>Header - 0</h1>
+    <h1>Header - 1</h1>
+    <h1>Header - 2</h1>
+</body>
+</html>

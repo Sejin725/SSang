@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery-addClass</title>
+    <style>
+        .item{color:red;}
+        .select{background-color: yellow;}
+
+    </style>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            //3초 후에 img 태그에 명시된 url 읽기
+            setTimeout(function(){
+                //속성 값 반환 후에 출력
+                alert($('img').attr('alt'));
+            },3000);
+        });
+    </script>
+</head>
+<body>
+    <img src="../files/blue.jpg" alt="https://www.naver.com">
+</body>
+</html>

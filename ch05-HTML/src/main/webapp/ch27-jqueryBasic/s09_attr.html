@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery-addClass</title>
+    <style>
+        .item{color:red;}
+        .select{background-color: yellow;}
+
+    </style>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            //하나의 속성 제어
+            // $('img').attr('width',function(index){
+            //     return (index+1) *100;
+            // });
+
+            //두개의 속성 제어 (각 인덱스마다 속성을 다르게 제어함)
+            $('img').attr({
+                width:function(index){
+                    return (index+1) *100;
+                },
+                height:function(index){
+                    return (index+1) *100;
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <img src="../files/blue.jpg" alt="">
+    <img src="../files/flower.jpg" alt="">
+    <img src="../files/winter.jpg" alt="">
+</body>
+</html>

@@ -244,7 +244,30 @@ ch22-jsEvent	(권장사항 : 스크립트내에서 이벤트 연결)
 	- s16 : 이미지 넘기기, 뒤로가기 구현하기
 	- s17 : 국어, 영어, 수학 점수 출력 실습
 	- s18 : 기본 이벤트
-	- s19 : 이벤트 전파(propagation)
-	- s20 : DOM Level2 = 표준 이벤트 모델
+	- s19 : 이벤트 전파(propagation) - 해결하기 위해서 stopPropagaion() 메서드 호출함
+	- s20 : DOM Level 2 = 표준 이벤트 모델
 	- s21 : 상품 구매 실습
 	- s22 : checkbox, number 실습
+
+ch23-reg
+	- s01 : 정규표현식 - test(문자열)
+	- s02 : 정규표현식 - match(패턴) : 처리속도가 느림
+	- s03 : 정규표현식 - test(문자열)
+
+ch24-webStorage
+	- s01 : 로컬스토리지(localStorage) - 브라우저를 종료해도 값이 저장되어있음, 메서드 [setItem, getItem] 
+	- s02 : 로컬스토리지를 이용한 환경 설정 값 기억
+	- s03 : 세센스토리지(sessionStorage) - 브라우저를 종료하면 값이 모두 초기화(삭제)됨, 메서드 [setItem, getItem]
+
+ch25-file
+	- s01 : FileReader - 파일을 읽을수 있게하는 클래스(객체)
+	- s02 : FileReader - 이미지 미리 보기
+
+ch26-canvas
+
+
+
+
+
+
+
