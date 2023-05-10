@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>image Canvas</title>
+    <script>
+        window.onload=function(){
+            let canvas = document.getElementById('canvas');
+
+            if(canvas.getContext){
+                let context = canvas.getContext('2d');
+
+                let img = new Image();
+                img.src='../files/landscape.jpg';
+
+                img.onload=function(){
+                                    //Image객체,x,y
+                    context.drawImage(img,10,10);
+                                    //Image객체의 넓이,높이 지정
+                    context.drawImage(img,10,500,200,100);
+                };
+
+
+
+            }else{
+                alert('브라우저가 캔버스를 지원하지 않습니다.')
+            }
+        };
+    </script>
+</head>
+<body>
+    <canvas id="canvas" width="800" height="400"></canvas>
+</body>
+</html>
