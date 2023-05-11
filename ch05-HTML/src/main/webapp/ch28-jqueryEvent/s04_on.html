@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>on</title>
+    <style>
+        .reverse{
+            background: black;
+
+        }
+    </style>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function(){
+            //click 이벤트 연결
+                      //이벤트타입, 이벤트 핸들러
+            $('h1').on('click',function(){
+                //이벤트가 발생한 태그
+                $(this).html(function(index,html){
+                    return html + '+';
+                });
+            }); // end of h1_click()
+
+            $('h1').on({mouseover:function(){
+                $(this).addClass('reverse');
+            },mouseout:function(){
+                $(this).removeClass('reverse');
+            }});
+
+
+        });
+    </script>
+</head>
+<body>
+    <h1>Header-0</h1>
+    <h1>Header-1</h1>
+    <h1>Header-2</h1>
+</body>
+</html>
