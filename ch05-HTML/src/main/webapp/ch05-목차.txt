@@ -311,7 +311,7 @@ ch28-jqueryEvent
 
 ch29-jqueryUI
 	- s01 : draggable() - 요소를 드래그 할수있게 처리함
-	- s02 : droppable() - 요소를 해당 지역에 놓으면 변화가 생기게 처리함
+	- s02 : droppable(drop, out) - 요소를 해당 지역에 놓으면 변화가 생기게 처리함
 	- s03 : accordion() - 네비게이션을 클릭하면 컨텐츠를 담은 컨테이너가 열리게 처리하는 방식
 	- s04 : datepicker() - jQuery UI의 날짜 선택 처리
 	- s05 : dialog() - 팝업창을 띄우게 만듬
