@@ -1,0 +1,70 @@
+@charset "UTF-8";
+ul{
+    list-style: none;
+    margin: 40px 0px;
+}
+li{
+    font-size: 15pt;
+    margin-top: 10px;
+}
+.blackBG{
+    width: 80%;
+    background-color: black;
+    color: azure;
+    margin: 0 auto;
+}
+#header{
+    top: 0;
+    margin: 0 auto;
+    display: flex;
+}
+#mainBody{
+    margin: 0 auto;
+}
+.mainImg{
+    width: 80%;
+    height: 80%;
+    margin: 10%;
+    border: 1px solid chocolate;
+}
+.boxContainer{
+    display: block;
+    margin: 0 auto;
+    border: 1px solid chocolate;
+}
+.boxbottomM{
+    margin-bottom: 80px;
+}
+.title{
+    margin: 10px auto;
+}
+.titlefont{
+    font-size: 30pt;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    text-align: center;
+    vertical-align: middle;
+    margin: 5px;
+}
+li > .lMargin{
+    margin-left: 15px;
+}
+li > #leftMargin{
+    margin-left: 30px;
+}
+.leftMargin{
+    margin: 30px;
+}
+.movie{
+    margin: 10px auto;
+}
+.topButton{
+    display: block;
+    position: fixed;
+    right: 30px;
+    bottom: 50px;
+}
+#topBpng{
+    width: 40px;
+    height: 40px;
+}
