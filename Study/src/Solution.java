@@ -2,29 +2,19 @@
 public class Solution {
 	
 
-	public int solution(int[] numbers) {
-        int a = 0, b = 0, index=0 ;
-        
-        for (int i = 0; i < numbers.length; i++) {
-            if(numbers[i] > a ) {
-                a = numbers[i];
-                index = i; //최대값의 인덱스
-            }
+	public int solution(int n) {
+        int answer = n/7;
+        if(n%7!=0) {
+        	answer++;
         }
-        for (int j = 0; j < numbers.length; j++) {
-            if(numbers[j] <= a && numbers[j] > b && j != index) {
-                b = numbers[j];
-            }
-        }
-        return a*b;
+        return answer;
     }
 
     public static void main(String[] args) {
         Solution s = new Solution();
-        
-        int[] num = {0,31,24,10,1,9};
+        int m = 1;
         //System.out.println(s.solution("workspace"));
-        System.out.println(s.solution(num));
+        System.out.println(s.solution(m));
 
     }
 }

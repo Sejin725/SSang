@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>식사 및 음료 주문</title>
+<script type="text/javascript">
+	window.onload=function(){
+		let myForm = document.getElementById('myForm');
+		myForm.onsubmit=function(){
+			let numbers = document.querySelectorAll('ul > li > input');
+			for (let i = 0; i < numbers.length; i++) {
+				if(numbers[i].value==''){
+					let label = document.querySelector('label[for="'+numbers[i].id+'"]');
+					alert(label.textContent + '의 수량을 입력하세요!');
+					numbers[i].value=0;
+					numbers[i].focus();
+					return false;
+				}
+			}// end of for()------
+			if(items[0].value==0 && items[1].value==0 && items[2].value==0){
+				alert('세가지 음식 중 하나는 꼭 주문해야 합니다.');
+				return false;
+			}
+		};
+	};
+</script>
+</head>
+<body>
+</body>
+</html>
