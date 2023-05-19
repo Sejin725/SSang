@@ -25,6 +25,45 @@ ch02-nestedObject
 	- s12 : 오토 플러쉬 속성 값 ture 예제
 	- s13 : 버퍼 정보 (out.getBufferSize())
 	
+ch03-include
+	- include.jspf : 변수를 공용으로 사용하기 위해 선언 및 초기화하는 페이지
+	- main01 : include.jspf를 불러와서 미리 선언된 변수를 사용함
+	- main02
+
+ch04-errorPage
+	- web.xml에서 에러페이지를 지정하면 해당 오류발생시 페이지 처리가 가능하다.
+	- error404 : 404오류(주소를 불러올 수 없는 오류)를 처리하는 페이지
+	- error500 : 500오류(페이지 호출시 오류가 발생한 경우)를 처리하는 페이지
+	- errorNullPointer : Null에러가 발생한 경우 처리하는 페이지
+	- viewErrorMessage : 에러타입, 에러메세지를 출력하는 페이지
+
+ch05-actionTag
+	- forwardA, B : A페이지에서 파라미터값을 가지고 B페이지를 호출해서 보여주는 페이지(클라이언트 속이기)
+	- layout : 페이지를 모듈화하여 각각 다른 jsp파일에서 구현을해 한페이지에서 모두 불러옴
+
+ch06-cookie
+	- makeCookie :
+	- viewCookie :
+	- modifyCookie :
+	- deleteCookie :
+
+ch07-session
+	- s01 : 
+	- s02 : 
+	- s03 : 
+	- s04 : 
+	- s05 : 
+
+ch08-fileupload
+	- s01 : 
+	- s02 : 
+	- s03 : 
+	- s04 : 
+	- s05 : 
+	- s06 : 
+
+ch09-jdbc
+	
 	
 - 에러 페이지 우선 순위 (권장 방법 : 2, 3번)
 1.page 디렉티브의 errorPage 속성에서 지정한 에러 페이지를 보여준다.
