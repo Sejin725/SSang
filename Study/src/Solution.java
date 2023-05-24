@@ -1,21 +1,31 @@
-
+import java.util.HashMap;
 public class Solution {
 	
 
-	public int solution(int n) {
-        int answer = n/7;
-        if(n%7!=0) {
-        	answer++;
+	public String[] solution(String[] players, String[] callings) {
+        HashMap<String, Integer> pName = new HashMap<>();
+        HashMap<Integer, String> pCnt = new HashMap<>();
+        for (int i = 0; i < players.length; i++) {
+            pName.put(players[i], i + 1);
+            pCnt.put(i+1, players[i]);
         }
-        return answer;
+        // 불릴때 마다 swap 진행
+        for (int i = 0; i < callings.length; i++) {
+
+        }
+        return players;
     }
 
     public static void main(String[] args) {
         Solution s = new Solution();
-        int m = 1;
-        //System.out.println(s.solution("workspace"));
-        System.out.println(s.solution(m));
 
+        String[] players = {"mumu","soe","poe","kai","mine"};
+        String[] callings = {"kai", "kai", "mine", "mine"};
+
+        s.solution(players, callings);
+        for (int i = 0; i < players.length; i++) {
+            System.out.println(players[i]);
+        }
     }
 }
 
