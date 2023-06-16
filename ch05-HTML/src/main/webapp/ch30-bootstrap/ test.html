@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<div id="wrap">
+		<div class="topNavi">
+			<div class="inner">
+				<ul class="fr">
+					<!--                    소유주 권한 추가-->
+					<li><a href="https://gdsup.aptner.com/login/">로그인</a></li>
+					<li><a href="https://gdsup.aptner.com/join/term">회원가입</a></li>
+					<li><a href="javascript:post_to_url('/mypage/',{'mb_idx':''})">마이페이지</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!-- 상단 검은색 메뉴바 끝-->
+		<!-- 검색바, 메인네임 시작-->
+		<div class="gnb">
+			<a href="https://gdsup.aptner.com"> <img
+				src="https://d3fixtu11mscj5.cloudfront.net/aptner/apt_logo/gdsup_home_top_KBAGNFOKRC37R.png"
+				alt="" />
+			</a>
+		</div>
+		<!-- 검색바, 메인네임 끝-->
+		<div class="lnb">
+			<div class="inner">
+				<div class="allCate">
+					<a href="javascript:allCate_menu_open();" class="allCate_menu">메뉴
+						전체보기</a>
+					<div class="allCate_dimmed" style="display: none"></div>
+					<div class="allCate_inner" style="display: none">
+						<a href="javascript:allCate_menu_close();"
+							class="allcate_btn_close blind_txt">창 닫기</a>
+						<div class="allmenu">
+							<dl>
+								<dt>아파트 소개</dt>
+								<dd>
+									<ul>
+										<li><a
+											href="javascript:post_to_url('/page/view/',{'web_list_id':'1','page_group_id':'1'})">
+												인사말 </a></li>
+										<li><a
+											href="javascript:post_to_url('/page/view/',{'web_list_id':'2','page_group_id':'1'})">
+												위치정보 </a></li>
+										<li><a
+											href="javascript:post_to_url('/page/view/',{'web_list_id':'3','page_group_id':'1'})">
+												연락처정보 </a></li>
+										<li><a
+											href="javascript:post_to_url('/page/view/',{'web_list_id':'4','page_group_id':'1'})">
+												단지전경 </a></li>
+										<li><a
+											href="javascript:post_to_url('/page/view/',{'web_list_id':'5','page_group_id':'1'})">
+												평형정보 </a></li>
+										<li><a
+											href="javascript:post_to_url('/page/view/',{'web_list_id':'6','page_group_id':'1'})">
+												커뮤니티시설 </a></li>
+										<li><a
+											href="javascript:post_to_url('/page/view/',{'web_list_id':'7','page_group_id':'1'})">
+												주변입지 </a></li>
+									</ul>
+								</dd>
+							</dl>
+							<dl>
+								<dt>공지사항</dt>
+								<dd>
+									<ul>
+										<li><a href="/board/lists/inform"> 관리사무소 공지사항 </a></li>
+										<li><a href="/board/lists/notice"> 입대의 공지사항 </a></li>
+										<li><a href="/board/lists/suggest"> 건의사항 </a></li>
+										<li><a href="/board/lists/meeting"> 회의결과 </a></li>
+										<li><a href="/board/lists/qna"> 관리사무소 Q&A </a></li>
+										<li><a href="/board/lists/votenotice"> 선관위 공지사항 </a></li>
+									</ul>
+								</dd>
+							</dl>
+							<dl>
+								<dt>커뮤니티</dt>
+								<dd>
+									<ul>
+										<li><a href="/board/lists/free"> 자유게시판 </a></li>
+										<li><a href="/board/lists/anabada"> 중고장터 </a></li>
+										<li><a href="/board/lists/club"> 동호회 </a></li>
+										<li><a href="/board/lists/as_share"> 하자보수 </a></li>
+										<li><a href="/board/lists/dong_bbs"> 동 게시판 </a></li>
+									</ul>
+								</dd>
+							</dl>
+							<dl>
+								<dt>의무공개</dt>
+								<dd>
+									<ul>
+										<li><a href="/board/lists/maintenance"> 관리비부과명세서 </a></li>
+										<li><a href="/board/lists/contract"> 계약서 </a></li>
+										<li><a href="/board/lists/management"> 관리규약 </a></li>
+										<li><a href="/board/lists/repair"> 장기수선충당금 </a></li>
+										<li><a href="/board/lists/safety"> 안전관리계획 </a></li>
+										<li><a href="/board/lists/bid"> 입찰정보 </a></li>
+									</ul>
+								</dd>
+							</dl>
+							<dl>
+								<dt>관리비조회</dt>
+								<dd>
+									<ul>
+										<li><a href="javascript:checkApti()"> 관리비조회 </a></li>
+									</ul>
+								</dd>
+							</dl>
+							<dl>
+								<dt>일정표</dt>
+								<dd>
+									<ul>
+										<li><a href="/calendar/"> 일정표 </a></li>
+									</ul>
+								</dd>
+							</dl>
+						</div>
+					</div>
+				</div>
+				<div class="cateList">
+					<ul>
+						<li class="dropdown"><a
+							href="javascript:post_to_url('/page/view/',{'web_list_id':'1','page_group_id':'1'})">아파트
+								소개</a>
+							<ul class="lnb_dp2">
+								<li class="sub_dropdown"><a
+									href="javascript:post_to_url('/page/view/',{'web_list_id':'1','page_group_id':'1'})">
+										인사말 </a></li>
+								<li class="sub_dropdown"><a
+									href="javascript:post_to_url('/page/view/',{'web_list_id':'2','page_group_id':'1'})">
+										위치정보 </a></li>
+								<li class="sub_dropdown"><a
+									href="javascript:post_to_url('/page/view/',{'web_list_id':'3','page_group_id':'1'})">
+										연락처정보 </a></li>
+								<li class="sub_dropdown"><a
+									href="javascript:post_to_url('/page/view/',{'web_list_id':'4','page_group_id':'1'})">
+										단지전경 </a></li>
+								<li class="sub_dropdown"><a
+									href="javascript:post_to_url('/page/view/',{'web_list_id':'5','page_group_id':'1'})">
+										평형정보 </a></li>
+								<li class="sub_dropdown"><a
+									href="javascript:post_to_url('/page/view/',{'web_list_id':'6','page_group_id':'1'})">
+										커뮤니티시설 </a></li>
+								<li class="sub_dropdown"><a
+									href="javascript:post_to_url('/page/view/',{'web_list_id':'7','page_group_id':'1'})">
+										주변입지 </a></li>
+							</ul></li>
+						<li class="dropdown"><a href="/board/lists/inform">공지사항</a>
+							<ul class="lnb_dp2">
+								<li class="sub_dropdown"><a href="/board/lists/inform">
+										관리사무소 공지사항 </a></li>
+								<li class="sub_dropdown"><a href="/board/lists/notice">
+										입대의 공지사항 </a></li>
+								<li class="sub_dropdown"><a href="/board/lists/suggest">
+										건의사항 </a></li>
+								<li class="sub_dropdown"><a href="/board/lists/meeting">
+										회의결과 </a></li>
+								<li class="sub_dropdown"><a href="/board/lists/qna">
+										관리사무소 Q&A </a></li>
+								<li class="sub_dropdown"><a href="/board/lists/votenotice">
+										선관위 공지사항 </a></li>
+							</ul></li>
+						<li class="dropdown"><a href="/board/lists/free">커뮤니티</a>
+							<ul class="lnb_dp2">
+								<li class="sub_dropdown"><a href="/board/lists/free">
+										자유게시판 </a></li>
+								<li class="sub_dropdown"><a href="/board/lists/anabada">
+										중고장터 </a></li>
+								<li class="sub_dropdown"><a href="/board/lists/club">
+										동호회 </a></li>
+								<li class="sub_dropdown"><a href="/board/lists/as_share">
+										하자보수 </a></li>
+								<li class="sub_dropdown"><a href="/board/lists/dong_bbs">
+										동 게시판 </a></li>
+							</ul></li>
+						<li class="dropdown"><a href="/board/lists/maintenance">의무공개</a>
+							<ul class="lnb_dp2">
+								<li class="sub_dropdown"><a href="/board/lists/maintenance">
+										관리비부과명세서 </a></li>
+								<li class="sub_dropdown"><a href="/board/lists/contract">
+										계약서 </a></li>
+								<li class="sub_dropdown"><a href="/board/lists/management">
+										관리규약 </a></li>
+								<li class="sub_dropdown"><a href="/board/lists/repair">
+										장기수선충당금 </a></li>
+								<li class="sub_dropdown"><a href="/board/lists/safety">
+										안전관리계획 </a></li>
+								<li class="sub_dropdown"><a href="/board/lists/bid">
+										입찰정보 </a></li>
+							</ul></li>
+						<li class="dropdown"><a href="javascript:checkApti()">관리비조회</a>
+							<ul class="lnb_dp2">
+								<li class="sub_dropdown"><a href="javascript:checkApti()">
+										관리비조회 </a></li>
+							</ul></li>
+						<li class="dropdown"><a href="/calendar/">일정표</a>
+							<ul class="lnb_dp2">
+								<li class="sub_dropdown"><a href="/calendar/"> 일정표 </a></li>
+							</ul></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="inner">
+			<div id="container" class="inner"></div>
+		</div>
+		<div id="footer">
+			<div class="fnb_wrap">
+				<ul class="fnb">
+					<li><a href="https://www.aptner.com/terms" target="_blank">이용약관</a></li>
+					<li><a href="https://www.aptner.com/privacy" target="_blank"><strong>개인정보취급방침</strong></a></li>
+					<li><a href="https://www.aptner.com/policy" target="_blank">게시글
+							운영정책</a></li>
+					<!--				<li><a href="/license/email_terms">이메일 무단수집거부</a></li>-->
+					<li><a href="/license">LICENSE</a></li>
+					<li><a
+						href="https://play.google.com/store/apps/details?id=kr.co.azsmart.apartner"
+						target="_blank">앱 다운로드</a></li>
+					<li><a href="https://www.aptner.com" target="_blank"><b>APTNER</b></a></li>
+				</ul>
+			</div>
+			<div class="inner">
+				<div class="f_logo fl">
+					<img
+						src="https://d3fixtu11mscj5.cloudfront.net/aptner/apt_logo/gdsup_home_footer_KBAGNHNT49MBS.png"
+						alt="" />
+				</div>
+				<div class="copy fl">
+					주소 : 서울특별시 강동구 고덕로80길 134 / 전화번호 : 02-442-9927 / 팩스 : 02-442-9928<br />copyright
+					© APTNER. All Rights Reserved
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

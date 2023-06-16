@@ -48,6 +48,29 @@ public class BoardDAO {
 		}
 	}
 	//글의 총 갯수
+	public int getCount()throws Exception{
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sql = null;
+		int count = 0;
+		
+		try {
+			conn = DBUtil.getConnection();
+			sql = "select count(*) from mboard ";
+			
+			pstmt = conn.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			if (rs.next()) {
+				count = rs.getInt(1);
+			}
+		} catch (Exception e) {
+			throw new Exception(e);
+		} finally {
+			DBUtil.executeClose(rs, pstmt, conn);
+		}
+		return count;
+	}
 	//글 목록
 	public List<BoardVO> getList(int startRow, int endRow)throws Exception{
 		Connection conn = null;
@@ -60,11 +83,15 @@ public class BoardDAO {
 			//커넥션풀로부터 커넥션을 할당
 			conn = DBUtil.getConnection();
 			//sql문 작성
-			//startRow와 endRow가 존재할 경우, sql문을 수정한다. (where 구문에 between 지정)
-			sql = "select * from mboard order by num desc";
+			sql = "SELECT * FROM (SELECT a.*, rownum rnum "
+				+ "FROM (SELECT * FROM mboard ORDER BY num DESC) A) "
+				+ "WHERE rnum >=? AND rnum <=? ";
 			
 			//PreparedStatement 객체 생성
 			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, startRow);
+			pstmt.setInt(2, endRow);
+			
 			rs = pstmt.executeQuery();
 			list = new ArrayList<BoardVO>();
 			while(rs.next()) {
@@ -85,6 +112,94 @@ public class BoardDAO {
 		return list;
 	}
 	//글 상세
+	public BoardVO getBoard(int num)throws Exception{
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		BoardVO board = null;
+		String sql = null;
+		
+		try {
+			//커넥션풀로부터 커넥션을 할당
+			conn = DBUtil.getConnection();
+			//SQL문 작성
+			sql = "select * from mboard where num = ?";
+			
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, num);
+			
+			rs = pstmt.executeQuery();
+			if (rs.next()) {
+				board = new BoardVO();
+				board.setNum(rs.getInt("num"));
+				board.setTitle(rs.getString("title"));
+				board.setName(rs.getString("name"));
+				board.setPasswd(rs.getString("passwd"));
+				board.setEmail(rs.getString("email"));
+				board.setPhone(rs.getString("phone"));
+				board.setContent(rs.getString("content"));
+				board.setIp(rs.getString("ip"));
+				board.setReg_date(rs.getDate("reg_date"));
+			}
+			
+			
+		} catch (Exception e) {
+			throw new Exception(e);
+		}finally {
+			DBUtil.executeClose(rs, pstmt, conn);
+		}
+		
+		
+		return board;
+	}
 	//글 수정
+	public void update(BoardVO boardVO)throws Exception{
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		String sql = null;
+		
+		try {
+			conn = DBUtil.getConnection();
+			sql = "update mboard set title=?, name=?, email=?, phone=?, content=?, ip=? "
+				+ "where num=? ";
+			
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, boardVO.getTitle());
+			pstmt.setString(2, boardVO.getName());
+			pstmt.setString(3, boardVO.getEmail());
+			pstmt.setString(4, boardVO.getPhone());
+			pstmt.setString(5, boardVO.getContent());
+			pstmt.setString(6, boardVO.getIp());
+			pstmt.setInt(7, boardVO.getNum());
+			
+			pstmt.executeUpdate();
+			
+		}catch (Exception e) {
+			throw new Exception(e);
+		}finally {
+			DBUtil.executeClose(null, pstmt, conn);
+		}
+		
+	}
 	//글 삭제
+	public void delete(int num)throws Exception{
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		String sql = null;
+		
+		try {
+			conn = DBUtil.getConnection();
+			sql = "delete from mboard where num=? ";
+			
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, num);
+			
+			pstmt.executeUpdate();
+			
+		} catch (Exception e) {
+			throw new Exception(e);
+		} finally {
+			DBUtil.executeClose(null, pstmt, conn);
+		}
+	}
 }
