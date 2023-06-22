@@ -321,7 +321,9 @@ form[id="order_modify"],form[id="order_form"]{
 	margin-top : 20px;
 }
 
-
+#delivery_text{
+	color: red;
+}
 
 
 

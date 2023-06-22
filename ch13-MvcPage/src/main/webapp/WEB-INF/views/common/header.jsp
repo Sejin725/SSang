@@ -17,6 +17,9 @@
 		<li>
 			<a href="${pageContext.request.contextPath}/item/list.do">상품관리</a>
 		</li>
+		<li>
+			<a href="${pageContext.request.contextPath}/order/list.do">주문관리</a>
+		</li>
 		</c:if>
 		<c:if test="${!empty user_num && user_auth == 2}">
 		<li>

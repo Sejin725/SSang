@@ -185,6 +185,25 @@
 				</tr>
 				</c:forEach>
 			</table>
+			<h3>상품구매목록
+				<input type="button" value="구매목록 보기" onclick="location.href='${pageContext.request.contextPath}/order/orderList.do'">
+			</h3>
+			<ul>
+				<li>
+					<c:forEach var="order" items="${orderList}">
+						<div>
+							<a href="${pageContext.request.contextPath}/order/orderModifyForm.do?order_num=${order.order_num}">
+								${order.order_num} ${order.item_name} (${order.reg_date})
+								<c:if test="${order.status == 1 }">배송대기</c:if>
+								<c:if test="${order.status == 2 }">배송준비중</c:if>
+								<c:if test="${order.status == 3 }">배송중</c:if>
+								<c:if test="${order.status == 4 }">배송완료</c:if>
+								<c:if test="${order.status == 5 }">주문취소</c:if>
+							</a>
+						</div>
+					</c:forEach>
+				</li>
+			</ul>
 		</div><%-- end of .mypage- --%>
 		<div class="mypage-end"></div>
 	</div>
@@ -192,3 +211,33 @@
 </div>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
